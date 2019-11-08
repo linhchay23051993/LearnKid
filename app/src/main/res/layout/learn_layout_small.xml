@@ -45,7 +45,7 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="350dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"></android.support.v4.view.ViewPager>
 
@@ -56,6 +56,7 @@
             android:layout_marginTop="8dp"
             android:background="#20ffffff"
             android:gravity="center"
+            android:visibility="gone"
             android:orientation="horizontal">
 
             <FrameLayout

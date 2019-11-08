@@ -39,23 +39,12 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
 
     Button nextBtn, backBtn, playMusicBtn;
 
-    private int mCheckPosition = 0;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.learn_layout_small);
         initView();
         createLearnLayout();
-        List<String> stringsList = new ArrayList<>();
-        stringsList.add("conbo");
-        stringsList.add("conchim");
-        stringsList.add("concho");
-        for (int i = 0; i < stringsList.size(); i++) {
-            int idImage = getResources().getIdentifier(stringsList.get(i),
-                    "drawable", getPackageName());
-            Log.d("LinhChay", idImage + " --" + stringsList.get(i));
-        }
     }
 
     private void createLearnLayout() {
@@ -76,56 +65,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void onPageSelected(int position) {
-                boolean check = true ? mCheckPosition < position : mCheckPosition > position;
-                mCheckPosition = position;
-                int preview_1 = 0;
-                int preview_2 = 0;
-                int preview_3 = 0;
-                int preview_4 = 0;
-                int preview_5 = 0;
-                if (position == 0) {
-                    previewImg_1.setImageResource(R.drawable.flag_vn);
-                    previewImg_1.setVisibility(View.GONE);
-                    previewImg_2.setImageResource(R.drawable.flag_vn);
-                    previewImg_2.setVisibility(View.GONE);
-//                    previewImg_3.setImageResource(listLeanObject.get(position));
-//                    previewImg_4.setImageResource(listLeanObject.get(position + 1));
-//                    previewImg_5.setImageResource(listLeanObject.get(position + 2));
-                } else if (position == 1) {
-                    previewImg_1.setImageResource(R.drawable.flag_vn);
-                    previewImg_1.setVisibility(View.GONE);
-//                    previewImg_2.setImageResource(listLeanObject.get(position - 1));
-//                    previewImg_2.setVisibility(View.VISIBLE);
-//                    previewImg_3.setImageResource(listLeanObject.get(position));
-//                    previewImg_4.setImageResource(listLeanObject.get(position + 1));
-//                    previewImg_5.setImageResource(listLeanObject.get(position + 2));
-                } else if (position < listLeanObject.size() - 2) {
-                    previewImg_1.setVisibility(View.VISIBLE);
-                    previewImg_2.setVisibility(View.VISIBLE);
-                    previewImg_4.setVisibility(View.VISIBLE);
-                    previewImg_5.setVisibility(View.VISIBLE);
-//                    previewImg_1.setImageResource(listLeanObject.get(position - 2));
-//                    previewImg_2.setImageResource(listLeanObject.get(position - 1));
-//                    previewImg_3.setImageResource(listLeanObject.get(position));
-//                    previewImg_4.setImageResource(listLeanObject.get(position + 1));
-//                    previewImg_5.setImageResource(listLeanObject.get(position + 2));
-                } else if (position < listLeanObject.size() - 1) {
-//                    previewImg_1.setImageResource(listLeanObject.get(position - 2));
-//                    previewImg_2.setImageResource(listLeanObject.get(position - 1));
-//                    previewImg_3.setImageResource(listLeanObject.get(position));
-//                    previewImg_4.setVisibility(View.VISIBLE);
-//                    previewImg_4.setImageResource(listLeanObject.get(position + 1));
-                    previewImg_5.setVisibility(View.GONE);
-                    previewImg_5.setImageResource(R.drawable.flag_vn);
-                } else {
-//                    previewImg_1.setImageResource(listLeanObject.get(position - 2));
-//                    previewImg_2.setImageResource(listLeanObject.get(position - 1));
-//                    previewImg_3.setImageResource(listLeanObject.get(position));
-                    previewImg_4.setVisibility(View.GONE);
-                    previewImg_4.setImageResource(R.drawable.flag_vn);
-                    previewImg_5.setVisibility(View.GONE);
-                    previewImg_5.setImageResource(R.drawable.flag_vn);
-                }
+
             }
 
             @Override
