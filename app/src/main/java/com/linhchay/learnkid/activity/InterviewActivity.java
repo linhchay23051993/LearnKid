@@ -32,7 +32,7 @@ public class InterviewActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_SETTING_INTERVIEW, Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
         int interview = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_SETTING_INTERVIEW_KEY, -1);

@@ -23,7 +23,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Động Vật"
             android:textColor="#FF0056CC"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -55,22 +54,47 @@
             android:layout_height="125dp"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:id="@+id/answer_a_img"
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:src="@drawable/conchim" />
+                android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/answer_b_img"
+                <ImageView
+                    android:id="@+id/answer_a_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/conchim" />
+
+                <ImageView
+                    android:id="@+id/check_answer_a_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/practice_incorrect" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:src="@drawable/conbo" />
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/answer_b_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/conchim" />
+
+                <ImageView
+                    android:id="@+id/check_answer_b_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/practice_incorrect" />
+            </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -78,23 +102,67 @@
             android:layout_height="125dp"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:id="@+id/answer_c_img"
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:src="@drawable/conlon" />
+                android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/answer_d_img"
+                <ImageView
+                    android:id="@+id/answer_c_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/conchim" />
+
+                <ImageView
+                    android:id="@+id/check_answer_c_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/practice_incorrect" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:src="@drawable/conmeo" />
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/answer_d_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/conchim" />
+
+                <ImageView
+                    android:id="@+id/check_answer_d_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/practice_incorrect" />
+            </RelativeLayout>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/play_music_btn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="20dp" />
+
+            <Button
+                android:id="@+id/next_question_btn"
+                android:layout_width="70dp"
+                android:layout_height="70dp" />
+        </LinearLayout>
+
 
     </LinearLayout>
 
