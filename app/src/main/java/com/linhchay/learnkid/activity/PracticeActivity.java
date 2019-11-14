@@ -24,12 +24,10 @@ import android.widget.TextView;
 
 import com.linhchay.learnkid.R;
 import com.linhchay.learnkid.constant.Constant;
-import com.linhchay.learnkid.database.DatabaseOpenHelper;
 import com.linhchay.learnkid.entity.LearnObject;
 import com.linhchay.learnkid.entity.ListLearnObject;
 import com.linhchay.learnkid.listener.SingleTapListenerImpl;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -51,6 +49,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
 
     int language = 0;
     int questionNumber = 0;
+    boolean checkWronged;
     String answerA_Text, answerB_Text, answerC_Text, answerD_Text;
 
     List<LearnObject> learnObjectsList;
@@ -65,6 +64,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void createQuestion() {
+        checkWronged = true;
         setVisibleAndEnable();
 
         learnObjectsListTemp = new ArrayList<>();
@@ -177,12 +177,11 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void checkTypeLearn() {
-        ListLearnObject listLearnObject = new ListLearnObject();
         Intent intent = getIntent();
         int typeLern = intent.getIntExtra(Constant.LEARN_TYPE, Constant.ANIMALS_VALUE);
         switch (typeLern) {
             case Constant.ANIMALS_VALUE:
-                learnObjectsList = listLearnObject.getAnimals();
+                learnObjectsList = ListLearnObject.getInstance().getAnimalsList();
                 Collections.shuffle(learnObjectsList);
                 titleText.setText(language == 0 ? R.string.vn_animals : R.string.eng_animals);
                 break;
@@ -265,7 +264,16 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
 
                         nextQuestionBtn.setEnabled(true);
                         nextQuestionBtn.startAnimation(animationNextQuestion);
+
+                        checkAnswerD.setVisibility(View.VISIBLE);
+                        checkAnswerB.setVisibility(View.VISIBLE);
+                        checkAnswerC.setVisibility(View.VISIBLE);
+
+                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                     } else {
+                        checkWronged = false;
                         showToastAndPlayMusic(false);
                         checkAnswerA.startAnimation(animationInCorrecrt);
                         checkAnswerA.setVisibility(View.VISIBLE);
@@ -287,7 +295,15 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
 
                         nextQuestionBtn.setEnabled(true);
                         nextQuestionBtn.startAnimation(animationNextQuestion);
+
+                        checkAnswerA.setVisibility(View.VISIBLE);
+                        checkAnswerD.setVisibility(View.VISIBLE);
+                        checkAnswerC.setVisibility(View.VISIBLE);
+                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                     } else {
+                        checkWronged = false;
                         showToastAndPlayMusic(false);
                         checkAnswerB.startAnimation(animationInCorrecrt);
                         checkAnswerB.setVisibility(View.VISIBLE);
@@ -309,7 +325,15 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
 
                         nextQuestionBtn.setEnabled(true);
                         nextQuestionBtn.startAnimation(animationNextQuestion);
+
+                        checkAnswerA.setVisibility(View.VISIBLE);
+                        checkAnswerB.setVisibility(View.VISIBLE);
+                        checkAnswerD.setVisibility(View.VISIBLE);
+                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                     } else {
+                        checkWronged = false;
                         showToastAndPlayMusic(false);
                         checkAnswerC.startAnimation(animationInCorrecrt);
                         checkAnswerC.setVisibility(View.VISIBLE);
@@ -331,7 +355,15 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
 
                         nextQuestionBtn.setEnabled(true);
                         nextQuestionBtn.startAnimation(animationNextQuestion);
+
+                        checkAnswerA.setVisibility(View.VISIBLE);
+                        checkAnswerB.setVisibility(View.VISIBLE);
+                        checkAnswerC.setVisibility(View.VISIBLE);
+                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                     } else {
+                        checkWronged = false;
                         showToastAndPlayMusic(false);
                         checkAnswerD.startAnimation(animationInCorrecrt);
                         checkAnswerD.setVisibility(View.VISIBLE);

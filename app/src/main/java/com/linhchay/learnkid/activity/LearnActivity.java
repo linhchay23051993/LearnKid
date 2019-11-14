@@ -18,6 +18,7 @@ import com.linhchay.learnkid.R;
 import com.linhchay.learnkid.constant.Constant;
 import com.linhchay.learnkid.database.DatabaseOpenHelper;
 import com.linhchay.learnkid.entity.LearnObject;
+import com.linhchay.learnkid.entity.ListLearnObject;
 import com.linhchay.learnkid.listener.SingleTapListenerImpl;
 import com.linhchay.learnkid.viewpaper.CustomViewPaper;
 import com.linhchay.learnkid.viewpaper.ViewPaperTransformer;
@@ -30,12 +31,11 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
 
     private ViewPager mViewPager;
     private CustomViewPaper mCustomViewPaper;
-    private DatabaseOpenHelper mDatabaseOpenHelper;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     MediaPlayer mMediaPlayer;
 
-    List<LearnObject> mLearnObject;
+    List<LearnObject> mLearnObjectList;
 
     ImageView previewImg_1, previewImg_2, previewImg_3, previewImg_4, previewImg_5;
 
@@ -59,7 +59,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void setUpViewPaper() {
-        mCustomViewPaper = new CustomViewPaper(this, mLearnObject, mViewPager);
+        mCustomViewPaper = new CustomViewPaper(this, mLearnObjectList, mViewPager);
         mViewPager.setPageTransformer(true, new ViewPaperTransformer());
         mViewPager.setAdapter(mCustomViewPaper);
         // set preview image
@@ -71,11 +71,11 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void onPageSelected(int position) {
-                countObjectText.setText((position + 1) + "/" + mLearnObject.size());
+                countObjectText.setText((position + 1) + "/" + mLearnObjectList.size());
                 if (language == 0) {
-                    playMusic(mMediaPlayer, mLearnObject.get(position).getmSoundVN());
+                    playMusic(mMediaPlayer, mLearnObjectList.get(position).getmSoundVN());
                 } else {
-                    playMusic(mMediaPlayer, mLearnObject.get(position).getmSoundENG());
+                    playMusic(mMediaPlayer, mLearnObjectList.get(position).getmSoundENG());
                 }
 
                 int idPreview1, idPreview2, idPreview3, idPreview4, idPreview5;
@@ -84,11 +84,11 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                     previewImg_1.setVisibility(View.GONE);
                     previewImg_2.setImageResource(R.drawable.flag_vn);
                     previewImg_2.setVisibility(View.GONE);
-                    idPreview3 = getResources().getIdentifier(mLearnObject.get(position).getmImage(),
+                    idPreview3 = getResources().getIdentifier(mLearnObjectList.get(position).getmImage(),
                             "drawable", getPackageName());
-                    idPreview4 = getResources().getIdentifier(mLearnObject.get(position + 1).getmImage(),
+                    idPreview4 = getResources().getIdentifier(mLearnObjectList.get(position + 1).getmImage(),
                             "drawable", getPackageName());
-                    idPreview5 = getResources().getIdentifier(mLearnObject.get(position + 2).getmImage(),
+                    idPreview5 = getResources().getIdentifier(mLearnObjectList.get(position + 2).getmImage(),
                             "drawable", getPackageName());
                     previewImg_3.setImageResource(idPreview3);
                     previewImg_4.setImageResource(idPreview4);
@@ -96,47 +96,47 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                 } else if (position == 1) {
                     previewImg_1.setImageResource(R.drawable.flag_vn);
                     previewImg_1.setVisibility(View.GONE);
-                    idPreview2 = getResources().getIdentifier(mLearnObject.get(position - 1).getmImage(),
+                    idPreview2 = getResources().getIdentifier(mLearnObjectList.get(position - 1).getmImage(),
                             "drawable", getPackageName());
-                    idPreview3 = getResources().getIdentifier(mLearnObject.get(position).getmImage(),
+                    idPreview3 = getResources().getIdentifier(mLearnObjectList.get(position).getmImage(),
                             "drawable", getPackageName());
-                    idPreview4 = getResources().getIdentifier(mLearnObject.get(position + 1).getmImage(),
+                    idPreview4 = getResources().getIdentifier(mLearnObjectList.get(position + 1).getmImage(),
                             "drawable", getPackageName());
-                    idPreview5 = getResources().getIdentifier(mLearnObject.get(position + 2).getmImage(),
+                    idPreview5 = getResources().getIdentifier(mLearnObjectList.get(position + 2).getmImage(),
                             "drawable", getPackageName());
                     previewImg_2.setImageResource(idPreview2);
                     previewImg_2.setVisibility(View.VISIBLE);
                     previewImg_3.setImageResource(idPreview3);
                     previewImg_4.setImageResource(idPreview4);
                     previewImg_5.setImageResource(idPreview5);
-                } else if (position < mLearnObject.size() - 2) {
+                } else if (position < mLearnObjectList.size() - 2) {
                     previewImg_1.setVisibility(View.VISIBLE);
                     previewImg_2.setVisibility(View.VISIBLE);
                     previewImg_4.setVisibility(View.VISIBLE);
                     previewImg_5.setVisibility(View.VISIBLE);
-                    idPreview1 = getResources().getIdentifier(mLearnObject.get(position - 2).getmImage(),
+                    idPreview1 = getResources().getIdentifier(mLearnObjectList.get(position - 2).getmImage(),
                             "drawable", getPackageName());
-                    idPreview2 = getResources().getIdentifier(mLearnObject.get(position - 1).getmImage(),
+                    idPreview2 = getResources().getIdentifier(mLearnObjectList.get(position - 1).getmImage(),
                             "drawable", getPackageName());
-                    idPreview3 = getResources().getIdentifier(mLearnObject.get(position).getmImage(),
+                    idPreview3 = getResources().getIdentifier(mLearnObjectList.get(position).getmImage(),
                             "drawable", getPackageName());
-                    idPreview4 = getResources().getIdentifier(mLearnObject.get(position + 1).getmImage(),
+                    idPreview4 = getResources().getIdentifier(mLearnObjectList.get(position + 1).getmImage(),
                             "drawable", getPackageName());
-                    idPreview5 = getResources().getIdentifier(mLearnObject.get(position + 2).getmImage(),
+                    idPreview5 = getResources().getIdentifier(mLearnObjectList.get(position + 2).getmImage(),
                             "drawable", getPackageName());
                     previewImg_1.setImageResource(idPreview1);
                     previewImg_2.setImageResource(idPreview2);
                     previewImg_3.setImageResource(idPreview3);
                     previewImg_4.setImageResource(idPreview4);
                     previewImg_5.setImageResource(idPreview5);
-                } else if (position < mLearnObject.size() - 1) {
-                    idPreview1 = getResources().getIdentifier(mLearnObject.get(position - 2).getmImage(),
+                } else if (position < mLearnObjectList.size() - 1) {
+                    idPreview1 = getResources().getIdentifier(mLearnObjectList.get(position - 2).getmImage(),
                             "drawable", getPackageName());
-                    idPreview2 = getResources().getIdentifier(mLearnObject.get(position - 1).getmImage(),
+                    idPreview2 = getResources().getIdentifier(mLearnObjectList.get(position - 1).getmImage(),
                             "drawable", getPackageName());
-                    idPreview3 = getResources().getIdentifier(mLearnObject.get(position).getmImage(),
+                    idPreview3 = getResources().getIdentifier(mLearnObjectList.get(position).getmImage(),
                             "drawable", getPackageName());
-                    idPreview4 = getResources().getIdentifier(mLearnObject.get(position + 1).getmImage(),
+                    idPreview4 = getResources().getIdentifier(mLearnObjectList.get(position + 1).getmImage(),
                             "drawable", getPackageName());
                     previewImg_1.setImageResource(idPreview1);
                     previewImg_2.setImageResource(idPreview2);
@@ -146,11 +146,11 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                     previewImg_5.setVisibility(View.GONE);
                     previewImg_5.setImageResource(R.drawable.flag_vn);
                 } else {
-                    idPreview1 = getResources().getIdentifier(mLearnObject.get(position - 2).getmImage(),
+                    idPreview1 = getResources().getIdentifier(mLearnObjectList.get(position - 2).getmImage(),
                             "drawable", getPackageName());
-                    idPreview2 = getResources().getIdentifier(mLearnObject.get(position - 1).getmImage(),
+                    idPreview2 = getResources().getIdentifier(mLearnObjectList.get(position - 1).getmImage(),
                             "drawable", getPackageName());
-                    idPreview3 = getResources().getIdentifier(mLearnObject.get(position).getmImage(),
+                    idPreview3 = getResources().getIdentifier(mLearnObjectList.get(position).getmImage(),
                             "drawable", getPackageName());
                     previewImg_1.setImageResource(idPreview1);
                     previewImg_2.setImageResource(idPreview2);
@@ -186,26 +186,56 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         int typeLearnValue = intentType.getIntExtra(Constant.LEARN_TYPE, -1);
         switch (typeLearnValue) {
             case Constant.ANIMALS_VALUE:
-                mLearnObject = mDatabaseOpenHelper.getAnimals();
+                mLearnObjectList = ListLearnObject.getInstance().getAnimalsList();
                 titleText.setText(language == 0 ? R.string.vn_animals : R.string.eng_animals);
                 break;
             case Constant.OBJECT_VALUE:
+                mLearnObjectList = ListLearnObject.getInstance().getObjectList();
                 titleText.setText(language == 0 ? R.string.vn_object : R.string.eng_object);
+                break;
+            case Constant.NUMBER_VALUE:
+                mLearnObjectList = ListLearnObject.getInstance().getNumbersList();
+                titleText.setText(language == 0 ? R.string.vn_number : R.string.eng_number);
+                break;
+            case Constant.ALPHABET_VALUE:
+                if (language == 0) {
+                    mLearnObjectList = ListLearnObject.getInstance().getAlphabetListVN();
+                    titleText.setText(R.string.vn_alphabet);
+                } else {
+                    mLearnObjectList = ListLearnObject.getInstance().getAlphabetListENG();
+                    titleText.setText(R.string.eng_alphabet);
+                }
+                break;
+            case Constant.FRUIT_VALUE:
+                mLearnObjectList = ListLearnObject.getInstance().getFruitList();
+                titleText.setText(language == 0 ? R.string.vn_fruit : R.string.eng_fruit);
+                break;
+            case Constant.FOOD_VALUE:
+                mLearnObjectList = ListLearnObject.getInstance().getFoodList();
+                titleText.setText(language == 0 ? R.string.vn_food : R.string.eng_food);
+                break;
+            case Constant.COLOR_VALUE:
+                mLearnObjectList = ListLearnObject.getInstance().getColorList();
+                titleText.setText(language == 0 ? R.string.vn_color : R.string.eng_color);
+                break;
+            case Constant.SHAPE_VALUE:
+                mLearnObjectList = ListLearnObject.getInstance().getShapeList();
+                titleText.setText(language == 0 ? R.string.vn_shapes : R.string.eng_shapes);
                 break;
             default:
                 break;
         }
-        countObjectText.setText("1" + "/" + mLearnObject.size());
+        countObjectText.setText("1" + "/" + mLearnObjectList.size());
         if (language == 0) {
-            playMusic(mMediaPlayer, mLearnObject.get(0).getmSoundVN());
+            playMusic(mMediaPlayer, mLearnObjectList.get(0).getmSoundVN());
         } else {
-            playMusic(mMediaPlayer, mLearnObject.get(0).getmSoundENG());
+            playMusic(mMediaPlayer, mLearnObjectList.get(0).getmSoundENG());
         }
 
     }
 
     private void initView() {
-        mLearnObject = new ArrayList<>();
+        mLearnObjectList = new ArrayList<>();
         mViewPager = findViewById(R.id.viewpager);
 
         previewImg_1 = findViewById(R.id.preview_1_img);
@@ -225,11 +255,6 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         backBtn.setOnClickListener(new SingleTapListenerImpl(this));
         playMusicBtn.setOnClickListener(new SingleTapListenerImpl(this));
 
-        try {
-            mDatabaseOpenHelper = new DatabaseOpenHelper(this);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, 0);
@@ -250,9 +275,9 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.play_music_btn:
                 if (language == 0) {
-                    playMusic(mMediaPlayer, mLearnObject.get(mViewPager.getCurrentItem()).getmSoundVN());
+                    playMusic(mMediaPlayer, mLearnObjectList.get(mViewPager.getCurrentItem()).getmSoundVN());
                 } else {
-                    playMusic(mMediaPlayer, mLearnObject.get(mViewPager.getCurrentItem()).getmSoundENG());
+                    playMusic(mMediaPlayer, mLearnObjectList.get(mViewPager.getCurrentItem()).getmSoundENG());
                 }
                 break;
             default:
