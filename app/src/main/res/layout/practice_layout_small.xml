@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="11.6"
-        android:background="#FFDD0B16"
+        android:background="#2196f3"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingLeft="10dp"
@@ -67,12 +67,11 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/conchim" />
 
-                <ImageView
+                <TextView
                     android:id="@+id/check_answer_a_img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/practice_incorrect" />
+                    android:scaleType="fitXY" />
             </RelativeLayout>
 
 
@@ -88,12 +87,11 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/conchim" />
 
-                <ImageView
+                <TextView
                     android:id="@+id/check_answer_b_img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/practice_incorrect" />
+                    android:scaleType="fitXY" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -115,12 +113,11 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/conchim" />
 
-                <ImageView
+                <TextView
                     android:id="@+id/check_answer_c_img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/practice_incorrect" />
+                    android:scaleType="fitXY" />
             </RelativeLayout>
 
 
@@ -136,12 +133,11 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/conchim" />
 
-                <ImageView
+                <TextView
                     android:id="@+id/check_answer_d_img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/practice_incorrect" />
+                    android:scaleType="fitXY" />
             </RelativeLayout>
         </LinearLayout>
 

@@ -3,14 +3,18 @@ package com.linhchay.learnkid.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -20,9 +24,9 @@ import android.widget.TextView;
 
 import com.linhchay.learnkid.R;
 import com.linhchay.learnkid.constant.Constant;
-import com.linhchay.learnkid.constant.CustomToast;
 import com.linhchay.learnkid.database.DatabaseOpenHelper;
 import com.linhchay.learnkid.entity.LearnObject;
+import com.linhchay.learnkid.entity.ListLearnObject;
 import com.linhchay.learnkid.listener.SingleTapListenerImpl;
 
 import java.io.IOException;
@@ -33,13 +37,17 @@ import java.util.List;
 public class PracticeActivity extends AppCompatActivity implements View.OnClickListener {
     TextView titleText, questionText;
     ImageView answerA, answerB, answerC, answerD;
-    ImageView checkAnswerA, checkAnswerB, checkAnswerC, checkAnswerD;
+    TextView checkAnswerA, checkAnswerB, checkAnswerC, checkAnswerD;
     Button playMusicBtn, nextQuestionBtn;
 
-    private DatabaseOpenHelper mDatabaseOpenHelper;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     MediaPlayer mMediaPlayer;
+
+    private Bitmap mbitmap;
+    private Bitmap imageRounded;
+    private Canvas canvas;
+    private Paint mpaint;
 
     int language = 0;
     int questionNumber = 0;
@@ -84,10 +92,21 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         int idImageAnswerD = getResources().getIdentifier(listAnswer.get(3).getmImage(),
                 "drawable", getPackageName());
 
-        answerA.setImageResource(idImageAnswerA);
-        answerB.setImageResource(idImageAnswerB);
-        answerC.setImageResource(idImageAnswerC);
-        answerD.setImageResource(idImageAnswerD);
+        Animation animationFadeIn = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.fade_in);
+        Animation animationFadeOut = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.fade_out);
+
+        connerImage(idImageAnswerA, answerA);
+        connerImage(idImageAnswerB, answerB);
+        connerImage(idImageAnswerC, answerC);
+        connerImage(idImageAnswerD, answerD);
+
+        answerA.startAnimation(animationFadeOut);
+        answerB.startAnimation(animationFadeIn);
+        answerC.startAnimation(animationFadeOut);
+        answerD.startAnimation(animationFadeIn);
+
         if (language == 0) {
             answerA_Text = listAnswer.get(0).getmNameVN();
             answerB_Text = listAnswer.get(1).getmNameVN();
@@ -150,14 +169,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         nextQuestionBtn.setEnabled(false);
 
         learnObjectsList = new ArrayList<>();
-
-        try {
-            mDatabaseOpenHelper = new DatabaseOpenHelper(this);
-            checkTypeLearn();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        checkTypeLearn();
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, 0);
@@ -165,11 +177,12 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void checkTypeLearn() {
+        ListLearnObject listLearnObject = new ListLearnObject();
         Intent intent = getIntent();
         int typeLern = intent.getIntExtra(Constant.LEARN_TYPE, Constant.ANIMALS_VALUE);
         switch (typeLern) {
             case Constant.ANIMALS_VALUE:
-                learnObjectsList = mDatabaseOpenHelper.getAnimals();
+                learnObjectsList = listLearnObject.getAnimals();
                 Collections.shuffle(learnObjectsList);
                 titleText.setText(language == 0 ? R.string.vn_animals : R.string.eng_animals);
                 break;
@@ -242,15 +255,10 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                 case R.id.answer_a_img:
                     if (TextUtils.equals(answerText, answerA_Text)) {
                         answerA.startAnimation(animationCorrecrt);
+                        checkAnswerA.setVisibility(View.VISIBLE);
+                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
-                        checkAnswerA.setVisibility(View.GONE);
-                        checkAnswerB.setVisibility(View.VISIBLE);
-                        checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerD.setVisibility(View.VISIBLE);
 
-                        checkAnswerB.startAnimation(animationAnswerWrong);
-                        checkAnswerC.startAnimation(animationAnswerWrong);
-                        checkAnswerD.startAnimation(animationAnswerWrong);
                         answerB.setEnabled(false);
                         answerC.setEnabled(false);
                         answerD.setEnabled(false);
@@ -258,24 +266,21 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         nextQuestionBtn.setEnabled(true);
                         nextQuestionBtn.startAnimation(animationNextQuestion);
                     } else {
-                        checkAnswerA.startAnimation(animationInCorrecrt);
                         showToastAndPlayMusic(false);
+                        checkAnswerA.startAnimation(animationInCorrecrt);
                         checkAnswerA.setVisibility(View.VISIBLE);
+                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         answerA.setEnabled(false);
+                        answerA.startAnimation(animationInCorrecrt);
                     }
                     break;
                 case R.id.answer_b_img:
                     if (TextUtils.equals(answerText, answerB_Text)) {
                         answerB.startAnimation(animationCorrecrt);
+                        checkAnswerB.setVisibility(View.VISIBLE);
+                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
-                        checkAnswerB.setVisibility(View.GONE);
-                        checkAnswerA.setVisibility(View.VISIBLE);
-                        checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerD.setVisibility(View.VISIBLE);
 
-                        checkAnswerA.startAnimation(animationAnswerWrong);
-                        checkAnswerC.startAnimation(animationAnswerWrong);
-                        checkAnswerD.startAnimation(animationAnswerWrong);
                         answerA.setEnabled(false);
                         answerC.setEnabled(false);
                         answerD.setEnabled(false);
@@ -283,24 +288,21 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         nextQuestionBtn.setEnabled(true);
                         nextQuestionBtn.startAnimation(animationNextQuestion);
                     } else {
-                        checkAnswerB.startAnimation(animationInCorrecrt);
                         showToastAndPlayMusic(false);
+                        checkAnswerB.startAnimation(animationInCorrecrt);
                         checkAnswerB.setVisibility(View.VISIBLE);
+                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         answerB.setEnabled(false);
+                        answerB.startAnimation(animationInCorrecrt);
                     }
                     break;
                 case R.id.answer_c_img:
                     if (TextUtils.equals(answerText, answerC_Text)) {
                         answerC.startAnimation(animationCorrecrt);
+                        checkAnswerC.setVisibility(View.VISIBLE);
+                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
-                        checkAnswerC.setVisibility(View.GONE);
-                        checkAnswerB.setVisibility(View.VISIBLE);
-                        checkAnswerA.setVisibility(View.VISIBLE);
-                        checkAnswerD.setVisibility(View.VISIBLE);
 
-                        checkAnswerB.startAnimation(animationAnswerWrong);
-                        checkAnswerA.startAnimation(animationAnswerWrong);
-                        checkAnswerD.startAnimation(animationAnswerWrong);
                         answerB.setEnabled(false);
                         answerA.setEnabled(false);
                         answerD.setEnabled(false);
@@ -308,24 +310,21 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         nextQuestionBtn.setEnabled(true);
                         nextQuestionBtn.startAnimation(animationNextQuestion);
                     } else {
-                        checkAnswerC.startAnimation(animationInCorrecrt);
                         showToastAndPlayMusic(false);
+                        checkAnswerC.startAnimation(animationInCorrecrt);
                         checkAnswerC.setVisibility(View.VISIBLE);
+                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         answerC.setEnabled(false);
+                        answerC.startAnimation(animationInCorrecrt);
                     }
                     break;
                 case R.id.answer_d_img:
                     if (TextUtils.equals(answerText, answerD_Text)) {
                         answerD.startAnimation(animationCorrecrt);
+                        checkAnswerD.setVisibility(View.VISIBLE);
+                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
-                        checkAnswerD.setVisibility(View.GONE);
-                        checkAnswerB.setVisibility(View.VISIBLE);
-                        checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerA.setVisibility(View.VISIBLE);
 
-                        checkAnswerB.startAnimation(animationAnswerWrong);
-                        checkAnswerC.startAnimation(animationAnswerWrong);
-                        checkAnswerA.startAnimation(animationAnswerWrong);
                         answerB.setEnabled(false);
                         answerC.setEnabled(false);
                         answerA.setEnabled(false);
@@ -333,10 +332,12 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         nextQuestionBtn.setEnabled(true);
                         nextQuestionBtn.startAnimation(animationNextQuestion);
                     } else {
-                        checkAnswerD.startAnimation(animationInCorrecrt);
                         showToastAndPlayMusic(false);
+                        checkAnswerD.startAnimation(animationInCorrecrt);
                         checkAnswerD.setVisibility(View.VISIBLE);
+                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         answerD.setEnabled(false);
+                        answerD.startAnimation(animationInCorrecrt);
                     }
                     break;
             }
@@ -347,7 +348,6 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
 
     private void showToastAndPlayMusic(boolean check) {
         if (check) {
-            CustomToast.makeText(this, check, CustomToast.LONG).show();
             mMediaPlayer = MediaPlayer.create(this, R.raw.practice_correct_mucsic);
             mMediaPlayer.start();
             mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -356,7 +356,6 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                 }
             });
         } else {
-            CustomToast.makeText(this, check, CustomToast.SHORT).show();
             mMediaPlayer = MediaPlayer.create(this, R.raw.practice_incorrect_mucsic);
             mMediaPlayer.start();
             mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -365,5 +364,16 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                 }
             });
         }
+    }
+
+    private void connerImage(int idImage, ImageView mImage) {
+        mbitmap = ((BitmapDrawable) getResources().getDrawable(idImage)).getBitmap();
+        imageRounded = Bitmap.createBitmap(mbitmap.getWidth(), mbitmap.getHeight(), mbitmap.getConfig());
+        canvas = new Canvas(imageRounded);
+        mpaint = new Paint();
+        mpaint.setAntiAlias(true);
+        mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+        canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 86, 86, mpaint); // Round Image Corner 100 100 100 100
+        mImage.setImageBitmap(imageRounded);
     }
 }
