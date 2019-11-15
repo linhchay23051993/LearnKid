@@ -3,7 +3,6 @@ package com.linhchay.learnkid.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,14 +15,12 @@ import android.widget.TextView;
 
 import com.linhchay.learnkid.R;
 import com.linhchay.learnkid.constant.Constant;
-import com.linhchay.learnkid.database.DatabaseOpenHelper;
 import com.linhchay.learnkid.entity.LearnObject;
 import com.linhchay.learnkid.entity.ListLearnObject;
 import com.linhchay.learnkid.listener.SingleTapListenerImpl;
 import com.linhchay.learnkid.viewpaper.CustomViewPaper;
 import com.linhchay.learnkid.viewpaper.ViewPaperTransformer;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +39,8 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
     TextView titleText, countObjectText;
 
     Button nextBtn, backBtn, playMusicBtn;
+
+    ImageView backScreenBtn;
 
     int language;
 
@@ -210,9 +209,9 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                 mLearnObjectList = ListLearnObject.getInstance().getFruitList();
                 titleText.setText(language == 0 ? R.string.vn_fruit : R.string.eng_fruit);
                 break;
-            case Constant.FOOD_VALUE:
-                mLearnObjectList = ListLearnObject.getInstance().getFoodList();
-                titleText.setText(language == 0 ? R.string.vn_food : R.string.eng_food);
+            case Constant.BODY_VALUE:
+                mLearnObjectList = ListLearnObject.getInstance().getBodyList();
+                titleText.setText(language == 0 ? R.string.vn_body : R.string.eng_body);
                 break;
             case Constant.COLOR_VALUE:
                 mLearnObjectList = ListLearnObject.getInstance().getColorList();
@@ -250,10 +249,12 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         nextBtn = findViewById(R.id.next_btn);
         backBtn = findViewById(R.id.back_btn);
         playMusicBtn = findViewById(R.id.play_music_btn);
+        backScreenBtn = findViewById(R.id.back_srceen_study_btn);
 
         nextBtn.setOnClickListener(new SingleTapListenerImpl(this));
         backBtn.setOnClickListener(new SingleTapListenerImpl(this));
         playMusicBtn.setOnClickListener(new SingleTapListenerImpl(this));
+        backScreenBtn.setOnClickListener(new SingleTapListenerImpl(this));
 
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -280,8 +281,17 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                     playMusic(mMediaPlayer, mLearnObjectList.get(mViewPager.getCurrentItem()).getmSoundENG());
                 }
                 break;
+            case R.id.back_srceen_study_btn:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

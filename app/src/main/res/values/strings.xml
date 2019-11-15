@@ -3,12 +3,12 @@
 
     <string name="vn_animals">Động vật</string>
     <string name="vn_object">Đồ vật</string>
-    <string name="vn_number">Số</string>
+    <string name="vn_number">Chữ Số</string>
     <string name="vn_alphabet">Chữ cái</string>
     <string name="vn_fruit">Hoa quả</string>
     <string name="vn_color">Màu sắc</string>
     <string name="vn_shapes">Hình dạng</string>
-    <string name="vn_food">Đồ ăn</string>
+    <string name="vn_body">Cơ thể</string>
 
     <string name="eng_animals">Animals</string>
     <string name="eng_object">Object</string>
@@ -17,6 +17,6 @@
     <string name="eng_fruit">Fruit</string>
     <string name="eng_color">Color</string>
     <string name="eng_shapes">Shape</string>
-    <string name="eng_food">Food</string>
+    <string name="eng_body">Body</string>
 
 </resources>

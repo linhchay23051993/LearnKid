@@ -89,7 +89,7 @@ public class ListLearnObject {
         return learnObjectList;
     }
 
-    public static List<LearnObject> getFoodList() {
+    public static List<LearnObject> getBodyList() {
         learnObjectList = new ArrayList<>();
         learnObjectList.add(new LearnObject("conbo", "Con Bò", "Cows", "number_one", "number_four"));
         learnObjectList.add(new LearnObject("conga", "Con Gà", "Cock", "number_two", "number_five"));
