@@ -1,5 +1,6 @@
 package com.linhchay.learnkid.activity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -174,8 +175,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Window window = mDialog.getWindow();
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        Button studyButton = mDialog.findViewById(R.id.study_btn);
-        Button practiceButton = mDialog.findViewById(R.id.practice_btn);
+        TextView studyButton = mDialog.findViewById(R.id.study_btn);
+        TextView practiceButton = mDialog.findViewById(R.id.practice_btn);
         studyButton.setText(language == 0 ? "Học" : "Study");
         practiceButton.setText(language == 0 ? "Luyện tập" : "Practice");
         studyButton.setOnClickListener(new View.OnClickListener() {
