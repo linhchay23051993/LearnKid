@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/practice_shape_rectangle_true"
+    android:background="@drawable/main_shape_study_practice"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="6dp">

@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
+    int language = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void getSelectedLangauge() {
-        int language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, -1);
+        language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, -1);
 
         if (language == -1) {
             editor.putInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, 0);
@@ -169,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showConfirmStudyDialog(final int type) {
-        int language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, -1);
+        language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, -1);
         final AppCompatDialog mDialog = new AppCompatDialog(this);
         mDialog.setContentView(R.layout.dialog_study_practice);
         Window window = mDialog.getWindow();
@@ -188,41 +190,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Intent animalsIntent = new Intent(getApplicationContext(), LearnActivity.class);
                         animalsIntent.putExtra(Constant.LEARN_TYPE, Constant.ANIMALS_VALUE);
                         startActivity(animalsIntent);
+                        finish();
                         break;
                     case Constant.OBJECT_VALUE:
                         Intent objectIntent = new Intent(getApplicationContext(), LearnActivity.class);
                         objectIntent.putExtra(Constant.LEARN_TYPE, Constant.OBJECT_VALUE);
                         startActivity(objectIntent);
+                        finish();
                         break;
                     case Constant.NUMBER_VALUE:
                         Intent numberIntent = new Intent(getApplicationContext(), LearnActivity.class);
                         numberIntent.putExtra(Constant.LEARN_TYPE, Constant.NUMBER_VALUE);
                         startActivity(numberIntent);
+                        finish();
                         break;
                     case Constant.ALPHABET_VALUE:
                         Intent alphabetIntent = new Intent(getApplicationContext(), LearnActivity.class);
                         alphabetIntent.putExtra(Constant.LEARN_TYPE, Constant.ALPHABET_VALUE);
                         startActivity(alphabetIntent);
+                        finish();
                         break;
                     case Constant.FRUIT_VALUE:
                         Intent fruitIntent = new Intent(getApplicationContext(), LearnActivity.class);
                         fruitIntent.putExtra(Constant.LEARN_TYPE, Constant.FRUIT_VALUE);
                         startActivity(fruitIntent);
+                        finish();
                         break;
                     case Constant.COLOR_VALUE:
                         Intent colorIntent = new Intent(getApplicationContext(), LearnActivity.class);
                         colorIntent.putExtra(Constant.LEARN_TYPE, Constant.COLOR_VALUE);
                         startActivity(colorIntent);
+                        finish();
                         break;
                     case Constant.BODY_VALUE:
                         Intent foodIntent = new Intent(getApplicationContext(), LearnActivity.class);
                         foodIntent.putExtra(Constant.LEARN_TYPE, Constant.BODY_VALUE);
                         startActivity(foodIntent);
+                        finish();
                         break;
                     case Constant.SHAPE_VALUE:
                         Intent shapeIntent = new Intent(getApplicationContext(), LearnActivity.class);
                         shapeIntent.putExtra(Constant.LEARN_TYPE, Constant.SHAPE_VALUE);
                         startActivity(shapeIntent);
+                        finish();
                         break;
                 }
             }
@@ -276,5 +286,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         mDialog.show();
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 }

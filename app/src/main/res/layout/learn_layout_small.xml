@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.3"
-        android:background="#ffffff">
+        android:background="#54922C">
 
         <ImageView
             android:id="@+id/back_srceen_study_btn"
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="11.6"
-        android:background="#FFDD0B16"
+        android:background="#ffffff"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -75,8 +75,7 @@
                     android:id="@+id/preview_1_img"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/conbo" />
+                    android:scaleType="fitXY" />
 
                 <TextView
                     android:layout_width="50dp"
@@ -93,8 +92,7 @@
                     android:id="@+id/preview_2_img"
                     android:layout_width="60dp"
                     android:layout_height="40dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/concho" />
+                    android:scaleType="fitXY" />
 
                 <TextView
                     android:layout_width="60dp"
@@ -108,8 +106,7 @@
                 android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="6dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/conchim" />
+                android:scaleType="fitXY" />
 
             <FrameLayout
                 android:layout_width="wrap_content"
@@ -120,8 +117,7 @@
                     android:id="@+id/preview_4_img"
                     android:layout_width="60dp"
                     android:layout_height="40dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/conmeo" />
+                    android:scaleType="fitXY" />
 
                 <TextView
                     android:layout_width="60dp"
@@ -138,8 +134,7 @@
                     android:id="@+id/preview_5_img"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/conmeo" />
+                    android:scaleType="fitXY" />
 
                 <TextView
                     android:layout_width="50dp"
@@ -180,6 +175,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.1"
-        android:background="#FF0056CC"></LinearLayout>
+        android:background="#54922C"></LinearLayout>
 
 </LinearLayout>

@@ -6,16 +6,21 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDialog;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -278,6 +283,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
             case R.id.back_screen_btn:
                 Intent animalsIntent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(animalsIntent);
+                finish();
                 break;
             default:
                 break;
@@ -315,6 +321,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+
+                        checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerA.startAnimation(animationInCorrecrt);
@@ -344,6 +352,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+
+                        checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerB.startAnimation(animationInCorrecrt);
@@ -373,6 +383,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+
+                        checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerC.startAnimation(animationInCorrecrt);
@@ -402,6 +414,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+
+                        checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerD.startAnimation(animationInCorrecrt);
@@ -436,6 +450,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+
+                        checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerA.startAnimation(animationInCorrecrt);
@@ -465,6 +481,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+
+                        checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerB.startAnimation(animationInCorrecrt);
@@ -494,6 +512,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+
+                        checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerC.startAnimation(animationInCorrecrt);
@@ -523,6 +543,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
                         checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+
+                        checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerD.startAnimation(animationInCorrecrt);
@@ -571,5 +593,48 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
     public void onBackPressed() {
         Intent animalsIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(animalsIntent);
+    }
+
+    private void showDialogFinish() {
+        final AppCompatDialog mDialog = new AppCompatDialog(this);
+        mDialog.setContentView(R.layout.dialog_study_finish);
+        Window window = mDialog.getWindow();
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mDialog.setCanceledOnTouchOutside(false);
+        TextView titleOneText = mDialog.findViewById(R.id.title_one_text);
+        TextView titleTwoText = mDialog.findViewById(R.id.title_two_text);
+        TextView finishBtn = mDialog.findViewById(R.id.finish_btn);
+        titleOneText.setText(language == 0 ? "Chúc mừng" : "Congratulations");
+        titleTwoText.setText(language == 0 ? "Bé đã hoàn thành bài học" : "Baby has completed the lesson");
+        finishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDialog.dismiss();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        mDialog.show();
+    }
+
+    private void checkShowDialogFinish() {
+        if (questionNumber == learnObjectsList.size() - 1) {
+            nextQuestionBtn.clearAnimation();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    showDialogFinish();
+                }
+            }, 300);
+
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 }

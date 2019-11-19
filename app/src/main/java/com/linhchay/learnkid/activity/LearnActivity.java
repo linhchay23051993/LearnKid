@@ -230,6 +230,15 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         } else {
             playMusic(mMediaPlayer, mLearnObjectList.get(0).getmSoundENG());
         }
+        int idPreview3 = getResources().getIdentifier(mLearnObjectList.get(0).getmImage(),
+                "drawable", getPackageName());
+        int idPreview4 = getResources().getIdentifier(mLearnObjectList.get(1).getmImage(),
+                "drawable", getPackageName());
+        int idPreview5 = getResources().getIdentifier(mLearnObjectList.get(2).getmImage(),
+                "drawable", getPackageName());
+        previewImg_3.setImageResource(idPreview3);
+        previewImg_4.setImageResource(idPreview4);
+        previewImg_5.setImageResource(idPreview5);
 
     }
 
@@ -284,6 +293,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
             case R.id.back_srceen_study_btn:
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
+                finish();
             default:
                 break;
         }
@@ -293,5 +303,11 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 }
