@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/practice_shape_rectangle_true"
+    android:background="@drawable/practice_shape_learn_finish"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp">
@@ -11,7 +11,7 @@
         android:id="@+id/title_one_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#fff100"
+        android:textColor="#2196f3"
         android:textSize="23sp"
         android:textStyle="bold" />
 
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textColor="#fff100"
+        android:textColor="#2196f3"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="#4caf50"
+        android:background="@drawable/practice_conner_btn"
         android:gravity="center"
         android:paddingBottom="6dp"
         android:paddingLeft="30dp"
