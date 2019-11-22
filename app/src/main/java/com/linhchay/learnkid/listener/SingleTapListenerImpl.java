@@ -6,7 +6,7 @@ import android.view.View.OnClickListener;
 
 public class SingleTapListenerImpl implements OnClickListener {
 
-    private static final int THRESHOLD = 200;
+    private static final int THRESHOLD = 50;
 
     private long timestamp = 0;
 

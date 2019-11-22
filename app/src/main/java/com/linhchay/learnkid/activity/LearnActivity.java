@@ -35,6 +35,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
     List<LearnObject> mLearnObjectList;
 
     ImageView previewImg_1, previewImg_2, previewImg_3, previewImg_4, previewImg_5;
+    TextView previewText_1, previewText_2, previewText_4, previewText_5;
 
     TextView titleText, countObjectText;
 
@@ -79,10 +80,10 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
 
                 int idPreview1, idPreview2, idPreview3, idPreview4, idPreview5;
                 if (position == 0) {
-                    previewImg_1.setImageResource(R.drawable.flag_vn);
                     previewImg_1.setVisibility(View.GONE);
-                    previewImg_2.setImageResource(R.drawable.flag_vn);
                     previewImg_2.setVisibility(View.GONE);
+                    previewText_1.setVisibility(View.GONE);
+                    previewText_2.setVisibility(View.GONE);
                     idPreview3 = getResources().getIdentifier(mLearnObjectList.get(position).getmImage(),
                             "drawable", getPackageName());
                     idPreview4 = getResources().getIdentifier(mLearnObjectList.get(position + 1).getmImage(),
@@ -93,8 +94,8 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                     previewImg_4.setImageResource(idPreview4);
                     previewImg_5.setImageResource(idPreview5);
                 } else if (position == 1) {
-                    previewImg_1.setImageResource(R.drawable.flag_vn);
                     previewImg_1.setVisibility(View.GONE);
+                    previewText_1.setVisibility(View.GONE);
                     idPreview2 = getResources().getIdentifier(mLearnObjectList.get(position - 1).getmImage(),
                             "drawable", getPackageName());
                     idPreview3 = getResources().getIdentifier(mLearnObjectList.get(position).getmImage(),
@@ -105,6 +106,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                             "drawable", getPackageName());
                     previewImg_2.setImageResource(idPreview2);
                     previewImg_2.setVisibility(View.VISIBLE);
+                    previewText_2.setVisibility(View.VISIBLE);
                     previewImg_3.setImageResource(idPreview3);
                     previewImg_4.setImageResource(idPreview4);
                     previewImg_5.setImageResource(idPreview5);
@@ -113,6 +115,11 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                     previewImg_2.setVisibility(View.VISIBLE);
                     previewImg_4.setVisibility(View.VISIBLE);
                     previewImg_5.setVisibility(View.VISIBLE);
+                    previewText_1.setVisibility(View.VISIBLE);
+                    previewText_2.setVisibility(View.VISIBLE);
+                    previewText_4.setVisibility(View.VISIBLE);
+                    previewText_5.setVisibility(View.VISIBLE);
+
                     idPreview1 = getResources().getIdentifier(mLearnObjectList.get(position - 2).getmImage(),
                             "drawable", getPackageName());
                     idPreview2 = getResources().getIdentifier(mLearnObjectList.get(position - 1).getmImage(),
@@ -141,9 +148,10 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                     previewImg_2.setImageResource(idPreview2);
                     previewImg_3.setImageResource(idPreview3);
                     previewImg_4.setVisibility(View.VISIBLE);
+                    previewText_4.setVisibility(View.VISIBLE);
                     previewImg_4.setImageResource(idPreview4);
                     previewImg_5.setVisibility(View.GONE);
-                    previewImg_5.setImageResource(R.drawable.flag_vn);
+                    previewText_5.setVisibility(View.GONE);
                 } else {
                     idPreview1 = getResources().getIdentifier(mLearnObjectList.get(position - 2).getmImage(),
                             "drawable", getPackageName());
@@ -155,9 +163,9 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
                     previewImg_2.setImageResource(idPreview2);
                     previewImg_3.setImageResource(idPreview3);
                     previewImg_4.setVisibility(View.GONE);
-                    previewImg_4.setImageResource(R.drawable.flag_vn);
                     previewImg_5.setVisibility(View.GONE);
-                    previewImg_5.setImageResource(R.drawable.flag_vn);
+                    previewText_4.setVisibility(View.GONE);
+                    previewText_5.setVisibility(View.GONE);
                 }
             }
 
@@ -239,6 +247,8 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         previewImg_3.setImageResource(idPreview3);
         previewImg_4.setImageResource(idPreview4);
         previewImg_5.setImageResource(idPreview5);
+        previewText_1.setVisibility(View.GONE);
+        previewText_2.setVisibility(View.GONE);
 
     }
 
@@ -251,6 +261,11 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         previewImg_3 = findViewById(R.id.preview_3_img);
         previewImg_4 = findViewById(R.id.preview_4_img);
         previewImg_5 = findViewById(R.id.preview_5_img);
+
+        previewText_1 = findViewById(R.id.preview_1_text);
+        previewText_2 = findViewById(R.id.preview_2_text);
+        previewText_4 = findViewById(R.id.preview_4_text);
+        previewText_5 = findViewById(R.id.preview_5_text);
 
         titleText = findViewById(R.id.title_text);
         countObjectText = findViewById(R.id.count_object_text);
@@ -305,6 +320,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         startActivity(intent);
         finish();
     }
+
     @Override
     protected void onStop() {
         super.onStop();

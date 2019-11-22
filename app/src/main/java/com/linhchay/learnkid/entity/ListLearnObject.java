@@ -20,7 +20,7 @@ public class ListLearnObject {
         learnObjectList.add(new LearnObject("animals_conlon", "Con Lợn", "Pig", "number_one", "number_one"));
         learnObjectList.add(new LearnObject("animals_contrau", "Con Trâu", "Buffalo", "number_one", "number_one"));
         learnObjectList.add(new LearnObject("animals_convit", "Con Vịt", "Duck", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("animals_conchim", "Con Chim Bồ Câu", "Pigeon", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conchim", "Chim Bồ Câu", "Pigeon", "number_one", "number_one"));
         learnObjectList.add(new LearnObject("animals_conkien", "Con Kiến", "Ant", "number_one", "number_one"));
         learnObjectList.add(new LearnObject("animals_conmuoi", "Con Muỗi", "Mosquito", "number_one", "number_one"));
         learnObjectList.add(new LearnObject("animals_conech", "Con Ếch", "Frog", "number_one", "number_one"));

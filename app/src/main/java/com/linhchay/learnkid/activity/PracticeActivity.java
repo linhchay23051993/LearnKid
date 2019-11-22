@@ -304,7 +304,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                     if (TextUtils.equals(answerText, answerA_Text)) {
                         answerA.startAnimation(animationCorrecrt);
                         checkAnswerA.setVisibility(View.VISIBLE);
-                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
+                        checkAnswerA.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
 
                         answerB.setEnabled(false);
@@ -318,16 +318,16 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerB.setVisibility(View.VISIBLE);
                         checkAnswerC.setVisibility(View.VISIBLE);
 
-                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerD.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
 
                         checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerA.startAnimation(animationInCorrecrt);
                         checkAnswerA.setVisibility(View.VISIBLE);
-                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerA.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
                         answerA.setEnabled(false);
                         answerA.startAnimation(animationInCorrecrt);
                     }
@@ -336,7 +336,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                     if (TextUtils.equals(answerText, answerB_Text)) {
                         answerB.startAnimation(animationCorrecrt);
                         checkAnswerB.setVisibility(View.VISIBLE);
-                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
+                        checkAnswerB.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
 
                         answerA.setEnabled(false);
@@ -349,16 +349,16 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setVisibility(View.VISIBLE);
                         checkAnswerD.setVisibility(View.VISIBLE);
                         checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerA.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerD.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
 
                         checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerB.startAnimation(animationInCorrecrt);
                         checkAnswerB.setVisibility(View.VISIBLE);
-                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
                         answerB.setEnabled(false);
                         answerB.startAnimation(animationInCorrecrt);
                     }
@@ -367,7 +367,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                     if (TextUtils.equals(answerText, answerC_Text)) {
                         answerC.startAnimation(animationCorrecrt);
                         checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
+                        checkAnswerC.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
 
                         answerB.setEnabled(false);
@@ -380,16 +380,16 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setVisibility(View.VISIBLE);
                         checkAnswerB.setVisibility(View.VISIBLE);
                         checkAnswerD.setVisibility(View.VISIBLE);
-                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerA.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerD.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
 
                         checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerC.startAnimation(animationInCorrecrt);
                         checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
                         answerC.setEnabled(false);
                         answerC.startAnimation(animationInCorrecrt);
                     }
@@ -398,7 +398,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                     if (TextUtils.equals(answerText, answerD_Text)) {
                         answerD.startAnimation(animationCorrecrt);
                         checkAnswerD.setVisibility(View.VISIBLE);
-                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
+                        checkAnswerD.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
 
                         answerB.setEnabled(false);
@@ -411,16 +411,16 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setVisibility(View.VISIBLE);
                         checkAnswerB.setVisibility(View.VISIBLE);
                         checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerA.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
 
                         checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerD.startAnimation(animationInCorrecrt);
                         checkAnswerD.setVisibility(View.VISIBLE);
-                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerD.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
                         answerD.setEnabled(false);
                         answerD.startAnimation(animationInCorrecrt);
                     }
@@ -433,7 +433,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                     if (TextUtils.equals(answerText, answerA_Text)) {
                         answerA.startAnimation(animationCorrecrt);
                         checkAnswerA.setVisibility(View.VISIBLE);
-                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
+                        checkAnswerA.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
 
                         answerB.setEnabled(false);
@@ -447,16 +447,16 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerB.setVisibility(View.VISIBLE);
                         checkAnswerC.setVisibility(View.VISIBLE);
 
-                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerD.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
 
                         checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerA.startAnimation(animationInCorrecrt);
                         checkAnswerA.setVisibility(View.VISIBLE);
-                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerA.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
                         answerA.setEnabled(false);
                         answerA.startAnimation(animationInCorrecrt);
                     }
@@ -465,7 +465,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                     if (TextUtils.equals(answerText, answerB_Text)) {
                         answerB.startAnimation(animationCorrecrt);
                         checkAnswerB.setVisibility(View.VISIBLE);
-                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
+                        checkAnswerB.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
 
                         answerA.setEnabled(false);
@@ -478,16 +478,16 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setVisibility(View.VISIBLE);
                         checkAnswerD.setVisibility(View.VISIBLE);
                         checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerA.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerD.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
 
                         checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerB.startAnimation(animationInCorrecrt);
                         checkAnswerB.setVisibility(View.VISIBLE);
-                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
                         answerB.setEnabled(false);
                         answerB.startAnimation(animationInCorrecrt);
                     }
@@ -496,7 +496,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                     if (TextUtils.equals(answerText, answerC_Text)) {
                         answerC.startAnimation(animationCorrecrt);
                         checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
+                        checkAnswerC.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
 
                         answerB.setEnabled(false);
@@ -509,16 +509,16 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setVisibility(View.VISIBLE);
                         checkAnswerB.setVisibility(View.VISIBLE);
                         checkAnswerD.setVisibility(View.VISIBLE);
-                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerA.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerD.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
 
                         checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerC.startAnimation(animationInCorrecrt);
                         checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
                         answerC.setEnabled(false);
                         answerC.startAnimation(animationInCorrecrt);
                     }
@@ -527,7 +527,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                     if (TextUtils.equals(answerText, answerD_Text)) {
                         answerD.startAnimation(animationCorrecrt);
                         checkAnswerD.setVisibility(View.VISIBLE);
-                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_true);
+                        checkAnswerD.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_true);
                         showToastAndPlayMusic(true);
 
                         answerB.setEnabled(false);
@@ -540,16 +540,16 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                         checkAnswerA.setVisibility(View.VISIBLE);
                         checkAnswerB.setVisibility(View.VISIBLE);
                         checkAnswerC.setVisibility(View.VISIBLE);
-                        checkAnswerA.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerB.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
-                        checkAnswerC.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerA.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerB.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
+                        checkAnswerC.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
 
                         checkShowDialogFinish();
                     } else {
                         showToastAndPlayMusic(false);
                         checkAnswerD.startAnimation(animationInCorrecrt);
                         checkAnswerD.setVisibility(View.VISIBLE);
-                        checkAnswerD.setBackgroundResource(R.drawable.practice_shape_rectangle_false);
+                        checkAnswerD.setBackgroundResource(R.drawable.drawable_practice_shape_rectangle_false);
                         answerD.setEnabled(false);
                         answerD.startAnimation(animationInCorrecrt);
                     }

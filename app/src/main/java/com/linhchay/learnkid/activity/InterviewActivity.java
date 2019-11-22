@@ -64,9 +64,9 @@ public class InterviewActivity extends AppCompatActivity implements View.OnClick
         mListImageInterview.add(R.drawable.animals_conbosua);
         mListImageInterview.add(R.drawable.animals_contrau);
 
-        indicator1.setBackground(getResources().getDrawable(R.drawable.indicator_selected));
-        indicator2.setBackground(getResources().getDrawable(R.drawable.indicator_not_selected));
-        indicator3.setBackground(getResources().getDrawable(R.drawable.indicator_not_selected));
+        indicator1.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_selected));
+        indicator2.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_not_selected));
+        indicator3.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_not_selected));
 
         mCustomViewPaper = new CustomViewpaperInterVIew(this, mListImageInterview, mViewPager);
         mViewPager.setAdapter(mCustomViewPaper);
@@ -79,17 +79,17 @@ public class InterviewActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onPageSelected(int position) {
                 if (position == 0) {
-                    indicator1.setBackground(getResources().getDrawable(R.drawable.indicator_selected));
-                    indicator2.setBackground(getResources().getDrawable(R.drawable.indicator_not_selected));
-                    indicator3.setBackground(getResources().getDrawable(R.drawable.indicator_not_selected));
+                    indicator1.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_selected));
+                    indicator2.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_not_selected));
+                    indicator3.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_not_selected));
                 } else if (position == 1) {
-                    indicator2.setBackground(getResources().getDrawable(R.drawable.indicator_selected));
-                    indicator1.setBackground(getResources().getDrawable(R.drawable.indicator_not_selected));
-                    indicator3.setBackground(getResources().getDrawable(R.drawable.indicator_not_selected));
+                    indicator2.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_selected));
+                    indicator1.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_not_selected));
+                    indicator3.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_not_selected));
                 } else {
-                    indicator3.setBackground(getResources().getDrawable(R.drawable.indicator_selected));
-                    indicator1.setBackground(getResources().getDrawable(R.drawable.indicator_not_selected));
-                    indicator2.setBackground(getResources().getDrawable(R.drawable.indicator_not_selected));
+                    indicator3.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_selected));
+                    indicator1.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_not_selected));
+                    indicator2.setBackground(getResources().getDrawable(R.drawable.drawable_indicator_not_selected));
                 }
             }
 
