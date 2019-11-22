@@ -13,19 +13,36 @@ public class ListLearnObject {
 
     public static List<LearnObject> getAnimalsList() {
         learnObjectList = new ArrayList<>();
-        learnObjectList.add(new LearnObject("object_caighe", "Cái Ghế", "Chair", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("conbo", "Con Bò", "Cows", "number_one", "number_four"));
-        learnObjectList.add(new LearnObject("test_alphabet", "Chữ A", "Duck", "number_one", "number_six"));
-        learnObjectList.add(new LearnObject("test_alphabet_2", "Chữ A", "Duck", "number_one", "number_six"));
-        learnObjectList.add(new LearnObject("test_alphabet", "Chữ A", "Duck", "number_one", "number_six"));
-        learnObjectList.add(new LearnObject("test_alphabet_2", "Chữ A", "Duck", "number_one", "number_six"));
-        learnObjectList.add(new LearnObject("test_alphabet", "Chữ A", "Duck", "number_one", "number_six"));
-        learnObjectList.add(new LearnObject("conga", "Con Gà", "Cock", "number_two", "number_five"));
-        learnObjectList.add(new LearnObject("test_alphabet", "Chữ A", "Duck", "number_one", "number_six"));
-        learnObjectList.add(new LearnObject("conchim", "Con Chim", "Birds", "number_three", "number_six"));
-        learnObjectList.add(new LearnObject("concho", "Con Chó", "Dog", "number_one", "number_seven"));
-        learnObjectList.add(new LearnObject("conmeo", "Con Mèo", "Cat", "number_two", "number_four"));
-        learnObjectList.add(new LearnObject("convit", "Con Vịt", "Duck", "number_one", "number_six"));
+        learnObjectList.add(new LearnObject("animals_concho", "Con Chó", "Dog", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conmeo", "Con Mèo", "Cat", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conga", "Con Gà", "Chicken", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conbo", "Con Bò", "Cows", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conlon", "Con Lợn", "Pig", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_contrau", "Con Trâu", "Buffalo", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_convit", "Con Vịt", "Duck", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conchim", "Con Chim Bồ Câu", "Pigeon", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conkien", "Con Kiến", "Ant", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conmuoi", "Con Muỗi", "Mosquito", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conech", "Con Ếch", "Frog", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conde", "Con Dê", "Goat", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conho", "Con Hổ", "Tiger", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_consutu", "Con Sư Tử", "Lion", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_convoi", "Con Voi", "Elephant", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conkhi", "Con Khỉ", "Monkey", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conca", "Con Cá", "Fish", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_concaheo", "Con Cá Heo", "Dolphin", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_congau", "Con Gấu", "Bear", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conbosua", "Con Bò sữa", "Milk cow", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conchuot", "Con Chuột", "Mouse", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_concua", "Con Cua", "Crab", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_contho", "Con Thỏ", "Rabbit", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_concasau", "Con Cá Sấu", "Crocodile", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_congautruc", "Con Gấu  Trúc", "Panda", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conlacda", "Con Lạc Đà", "Camel", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_contegiac", "Con Tê Giác", "Rhino", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conhama", "Con Hà Mã", "Hippopotamus", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("animals_conngua", "Con Ngựa", "Horse", "number_one", "number_one"));
+
         return learnObjectList;
     }
 
@@ -55,6 +72,8 @@ public class ListLearnObject {
         learnObjectList.add(new LearnObject("object_caichoi", "Cái Chổi", "Broom", "number_one", "number_one"));
         learnObjectList.add(new LearnObject("object_maybay", "Máy Bay", "Planes", "number_one", "number_one"));
         learnObjectList.add(new LearnObject("object_caigiuong", "Cái Giường", "Bed", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("object_quabong", "Quả Bóng", "Ball", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("object_bongbay", "Bóng Bay", "Balloon", "number_one", "number_one"));
 
         return learnObjectList;
     }
@@ -144,48 +163,48 @@ public class ListLearnObject {
 
     public static List<LearnObject> getFruitList() {
         learnObjectList = new ArrayList<>();
-        learnObjectList.add(new LearnObject("conbo", "Con Bò", "Cows", "number_one", "number_four"));
-        learnObjectList.add(new LearnObject("conga", "Con Gà", "Cock", "number_two", "number_five"));
-        learnObjectList.add(new LearnObject("conchim", "Con Chim", "Birds", "number_three", "number_six"));
-        learnObjectList.add(new LearnObject("concho", "Con Chó", "Dog", "number_one", "number_seven"));
-        learnObjectList.add(new LearnObject("conmeo", "Con Mèo", "Cat", "number_two", "number_four"));
-        learnObjectList.add(new LearnObject("convit", "Con Vịt", "Duck", "number_one", "number_six"));
+        learnObjectList.add(new LearnObject("fruit_quabingo", "Quả Bí Ngô", "Pumpkin", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quatao", "Quả Táo", "Apple", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quacam", "Quả Cam", "Orange", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quachanh", "Quả Chanh", "Lemon", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quaoi", "Quả Ổi", "Guava", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quachuoi", "Quả Chuối", "Banana", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quaxoai", "Quả Xoài", "Mangoes", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quanho", "Quả Nho", "Grape", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quachomchom", "Quả Chôm Chôm", "Rambutan fruit", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quadua", "Quả Dừa", "Coconut", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quaot", "Quả Ớt", "Chili Peppers", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quamit", "Quả Mít", "Jack fruit", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_bapngo", "Bắp Ngô", "Corncob", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quacachua", "Quả Cà Chua", "Tomato", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quaduachuot", "Quả Dưa Chuột", "Cucumber", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quaduahau", "Quả Dưa Hấu", "Watermelon", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quale", "Quả Lê", "Pear", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quakhe", "Quả Khế", "Starfruit", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_qualuu", "Quả Lựu", "Pomegranate", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quanhan", "Quả Nhãn", "Longan", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quabuoi", "Quả Bưởi", "Grapefruit", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quadudu", "Quả Đu Đủ", "Papaya", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quaman", "Quả Mận", "Plum", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("fruit_quadao", "Quả Đào", "Peaches", "number_one", "number_one"));
 
         return learnObjectList;
     }
 
     public static List<LearnObject> getBodyList() {
         learnObjectList = new ArrayList<>();
-        learnObjectList.add(new LearnObject("conbo", "Con Bò", "Cows", "number_one", "number_four"));
-        learnObjectList.add(new LearnObject("conga", "Con Gà", "Cock", "number_two", "number_five"));
-        learnObjectList.add(new LearnObject("conchim", "Con Chim", "Birds", "number_three", "number_six"));
-        learnObjectList.add(new LearnObject("concho", "Con Chó", "Dog", "number_one", "number_seven"));
-        learnObjectList.add(new LearnObject("conmeo", "Con Mèo", "Cat", "number_two", "number_four"));
-        learnObjectList.add(new LearnObject("convit", "Con Vịt", "Duck", "number_one", "number_six"));
 
         return learnObjectList;
     }
 
     public static List<LearnObject> getColorList() {
         learnObjectList = new ArrayList<>();
-        learnObjectList.add(new LearnObject("conbo", "Con Bò", "Cows", "number_one", "number_four"));
-        learnObjectList.add(new LearnObject("conga", "Con Gà", "Cock", "number_two", "number_five"));
-        learnObjectList.add(new LearnObject("conchim", "Con Chim", "Birds", "number_three", "number_six"));
-        learnObjectList.add(new LearnObject("concho", "Con Chó", "Dog", "number_one", "number_seven"));
-        learnObjectList.add(new LearnObject("conmeo", "Con Mèo", "Cat", "number_two", "number_four"));
-        learnObjectList.add(new LearnObject("convit", "Con Vịt", "Duck", "number_one", "number_six"));
 
         return learnObjectList;
     }
 
     public static List<LearnObject> getShapeList() {
         learnObjectList = new ArrayList<>();
-        learnObjectList.add(new LearnObject("conbo", "Con Bò", "Cows", "number_one", "number_four"));
-        learnObjectList.add(new LearnObject("conga", "Con Gà", "Cock", "number_two", "number_five"));
-        learnObjectList.add(new LearnObject("conchim", "Con Chim", "Birds", "number_three", "number_six"));
-        learnObjectList.add(new LearnObject("concho", "Con Chó", "Dog", "number_one", "number_seven"));
-        learnObjectList.add(new LearnObject("conmeo", "Con Mèo", "Cat", "number_two", "number_four"));
-        learnObjectList.add(new LearnObject("convit", "Con Vịt", "Duck", "number_one", "number_six"));
 
         return learnObjectList;
     }

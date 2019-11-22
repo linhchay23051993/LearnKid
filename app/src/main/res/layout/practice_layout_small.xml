@@ -66,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/conchim" />
+                    android:src="@drawable/animals_conbo" />
 
                 <TextView
                     android:id="@+id/check_answer_a_img"
@@ -86,7 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/conchim" />
+                    android:src="@drawable/animals_conbo" />
 
                 <TextView
                     android:id="@+id/check_answer_b_img"
@@ -112,7 +112,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/conchim" />
+                    android:src="@drawable/animals_conbo" />
 
                 <TextView
                     android:id="@+id/check_answer_c_img"
@@ -132,7 +132,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/conchim" />
+                    android:src="@drawable/animals_conbo" />
 
                 <TextView
                     android:id="@+id/check_answer_d_img"

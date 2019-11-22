@@ -60,9 +60,9 @@ public class InterviewActivity extends AppCompatActivity implements View.OnClick
         startLearnBtn.setOnClickListener(new SingleTapListenerImpl(this));
 
         mListImageInterview = new ArrayList<>();
-        mListImageInterview.add(R.drawable.conbo);
-        mListImageInterview.add(R.drawable.conchim);
-        mListImageInterview.add(R.drawable.concho);
+        mListImageInterview.add(R.drawable.animals_conca);
+        mListImageInterview.add(R.drawable.animals_conbosua);
+        mListImageInterview.add(R.drawable.animals_contrau);
 
         indicator1.setBackground(getResources().getDrawable(R.drawable.indicator_selected));
         indicator2.setBackground(getResources().getDrawable(R.drawable.indicator_not_selected));
@@ -108,6 +108,7 @@ public class InterviewActivity extends AppCompatActivity implements View.OnClick
         startActivity(intent);
         finish();
     }
+
     @Override
     protected void onStop() {
         super.onStop();

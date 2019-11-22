@@ -41,7 +41,7 @@
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/conbo" />
+                android:src="@drawable/animals_conbo" />
 
             <TextView
                 android:layout_width="50dp"
@@ -59,7 +59,7 @@
                 android:layout_width="60dp"
                 android:layout_height="40dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/concho" />
+                android:src="@drawable/animals_conbo" />
 
             <TextView
                 android:layout_width="60dp"
@@ -74,7 +74,7 @@
             android:layout_height="60dp"
             android:layout_marginRight="6dp"
             android:scaleType="fitXY"
-            android:src="@drawable/conchim" />
+            android:src="@drawable/animals_conbo" />
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -86,7 +86,7 @@
                 android:layout_width="60dp"
                 android:layout_height="40dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/conmeo" />
+                android:src="@drawable/animals_conbo" />
 
             <TextView
                 android:layout_width="60dp"
@@ -104,7 +104,7 @@
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/conmeo" />
+                android:src="@drawable/animals_conbo" />
 
             <TextView
                 android:layout_width="50dp"
