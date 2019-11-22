@@ -199,7 +199,18 @@ public class ListLearnObject {
 
     public static List<LearnObject> getColorList() {
         learnObjectList = new ArrayList<>();
-
+        learnObjectList = new ArrayList<>();
+        learnObjectList.add(new LearnObject("color_do", "Màu Đỏ", "Red", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("color_den", "Màu Đen", "Black", "number_one", "number_one"));
+//        learnObjectList.add(new LearnObject("color_trang", "Màu Trắng", "White", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("color_vang", "Màu Vàng", "Yellow", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("color_tim", "Màu Tím", "Purple", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("color_hong", "Màu Hồng", "Pink", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("color_dacam", "Màu Da Cam", "Orange", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("color_nau", "Màu Nâu", "Brown", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("color_xam", "Màu Xám", "Grey", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("color_xanhlacay", "Màu Xanh Lá Cây", "Green", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("color_xanhduong", "Màu Xanh Dương", "Blue", "number_one", "number_one"));
         return learnObjectList;
     }
 
