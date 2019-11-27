@@ -55,8 +55,8 @@
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="14dp"></android.support.v4.view.ViewPager>
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="20dp"></android.support.v4.view.ViewPager>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,83 +68,96 @@
             android:visibility="visible">
 
             <FrameLayout
-                android:layout_width="50dp"
-                android:layout_height="30dp"
+                android:layout_width="44dp"
+                android:layout_height="32dp"
                 android:layout_marginRight="6dp">
 
                 <ImageView
                     android:id="@+id/preview_1_img"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
                     android:scaleType="fitXY" />
 
                 <TextView
                     android:id="@+id/preview_1_text"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:background="#50ffffff" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/drawable_boder_preview_image" />
             </FrameLayout>
 
             <FrameLayout
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="42dp"
                 android:layout_marginRight="6dp">
 
                 <ImageView
                     android:id="@+id/preview_2_img"
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
                     android:scaleType="fitXY" />
 
                 <TextView
                     android:id="@+id/preview_2_text"
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
-                    android:background="#30ffffff" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/drawable_boder_preview_image" />
             </FrameLayout>
 
-
-            <ImageView
-                android:id="@+id/preview_3_img"
+            <FrameLayout
                 android:layout_width="80dp"
-                android:layout_height="60dp"
-                android:layout_marginRight="6dp"
-                android:scaleType="fitXY" />
+                android:layout_height="58dp"
+                android:layout_marginRight="6dp">
+
+                <ImageView
+                    android:id="@+id/preview_3_img"
+                    android:layout_width="match_parent"
+                    android:layout_margin="1dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/drawable_boder_preview_image_main" />
+            </FrameLayout>
 
             <FrameLayout
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="42dp"
                 android:layout_marginRight="6dp">
 
                 <ImageView
                     android:id="@+id/preview_4_img"
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
                     android:scaleType="fitXY" />
 
                 <TextView
                     android:id="@+id/preview_4_text"
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
-                    android:background="#30ffffff" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/drawable_boder_preview_image" />
             </FrameLayout>
 
 
             <FrameLayout
-                android:layout_width="50dp"
-                android:layout_height="30dp">
+                android:layout_width="44dp"
+                android:layout_height="32dp">
 
                 <ImageView
                     android:id="@+id/preview_5_img"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
                     android:scaleType="fitXY" />
 
                 <TextView
                     android:id="@+id/preview_5_text"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:background="#50ffffff" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/drawable_boder_preview_image" />
             </FrameLayout>
         </LinearLayout>
 
