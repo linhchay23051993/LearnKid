@@ -1,11 +1,13 @@
 package com.linhchay.learnkid.activity;
 
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialog;
@@ -25,7 +27,8 @@ import com.linhchay.learnkid.listener.SingleTapListenerImpl;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     LinearLayout animalsBg, objectBg, numberBg, alphabetBg, fruitBg, foodBg, colorBg, shapeBg;
     TextView animalsText, objectText, numberText, alphabetText, fruitText, foodText, colorText, shapeText;
-    ImageView selectLanguageTmg;
+    TextView titleText;
+    ImageView selectLanguageTmg, rateIconImg, feedbakIconImg;
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -73,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         foodText.setText(R.string.vn_body);
         colorText.setText(R.string.vn_color);
         shapeText.setText(R.string.vn_shapes);
+
+        titleText.setText("Bài học");
     }
 
     private void createHomeScreenENG() {
@@ -84,6 +89,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         foodText.setText(R.string.eng_body);
         colorText.setText(R.string.eng_color);
         shapeText.setText(R.string.eng_shapes);
+
+        titleText.setText("Lesson");
     }
 
     private void initView() {
@@ -105,7 +112,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         colorText = findViewById(R.id.color_text);
         shapeText = findViewById(R.id.shape_text);
 
+        titleText = findViewById(R.id.title_text);
+
         selectLanguageTmg = findViewById(R.id.select_language_img);
+        rateIconImg = findViewById(R.id.rate_icon_img);
+        feedbakIconImg = findViewById(R.id.feedback_icon_img);
 
         animalsBg.setOnClickListener(new SingleTapListenerImpl(this));
         objectBg.setOnClickListener(new SingleTapListenerImpl(this));
@@ -116,7 +127,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         colorBg.setOnClickListener(new SingleTapListenerImpl(this));
         shapeBg.setOnClickListener(new SingleTapListenerImpl(this));
         selectLanguageTmg.setOnClickListener(new SingleTapListenerImpl(this));
-
+        rateIconImg.setOnClickListener(new SingleTapListenerImpl(this));
+        feedbakIconImg.setOnClickListener(new SingleTapListenerImpl(this));
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
@@ -127,6 +139,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.select_language_img:
                 changeLanguageOnClick();
+                break;
+            case R.id.rate_icon_img:
+                rateButton();
+                break;
+            case R.id.feedback_icon_img:
+                feedbackButton();
                 break;
             case R.id.animals_bg:
                 showConfirmStudyDialog(Constant.ANIMALS_VALUE);
@@ -168,6 +186,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editor.commit();
         }
         getSelectedLangauge();
+    }
+
+    private void rateButton() {
+        Uri uri = Uri.parse("market://details?id=" + getApplicationContext().getPackageName());
+        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        try {
+            startActivity(goToMarket);
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName())));
+        }
+    }
+
+    private void feedbackButton() {
+        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                "mailto", "nguyenvanlinh23051993@gmail.com", null));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "[APP] Feedback on the application");
+        intent.putExtra(Intent.EXTRA_TEXT, "Please write your feedback. Thank you!");
+        startActivity(Intent.createChooser(intent, "Choose an Email client :"));
     }
 
     private void showConfirmStudyDialog(final int type) {
