@@ -287,9 +287,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         mDialog.show();
     }
-    @Override
-    protected void onStop() {
-        super.onStop();
-        finish();
-    }
 }

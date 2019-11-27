@@ -109,9 +109,4 @@ public class InterviewActivity extends AppCompatActivity implements View.OnClick
         finish();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        finish();
-    }
 }

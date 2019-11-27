@@ -320,10 +320,4 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         startActivity(intent);
         finish();
     }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        finish();
-    }
 }
