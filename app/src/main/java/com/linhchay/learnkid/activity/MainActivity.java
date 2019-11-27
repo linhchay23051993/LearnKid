@@ -5,7 +5,14 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +40,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
+    private Bitmap mbitmap;
+    private Bitmap imageRounded;
+    private Canvas canvas;
+    private Paint mpaint;
+
     int language = 0;
 
     @Override
@@ -55,14 +67,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (language == -1) {
             editor.putInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, 0);
             editor.commit();
-
-            selectLanguageTmg.setImageResource(R.drawable.flag_vn);
             createHomeScreenVN();
         } else if (language == 0) {
-            selectLanguageTmg.setImageResource(R.drawable.flag_vn);
             createHomeScreenVN();
         } else {
-            selectLanguageTmg.setImageResource(R.drawable.flag_eng);
             createHomeScreenENG();
         }
     }
@@ -78,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         shapeText.setText(R.string.vn_shapes);
 
         titleText.setText("Bài học");
+        connerImage(R.mipmap.flag_vn, selectLanguageTmg);
     }
 
     private void createHomeScreenENG() {
@@ -91,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         shapeText.setText(R.string.eng_shapes);
 
         titleText.setText("Lesson");
+        connerImage(R.mipmap.flag_eng, selectLanguageTmg);
     }
 
     private void initView() {
@@ -132,6 +142,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
+        connerImage(R.mipmap.rate_icon, rateIconImg);
+        connerImage(R.mipmap.feedback_icon, feedbakIconImg);
     }
 
     @Override
@@ -326,5 +338,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         mDialog.show();
+    }
+
+    private void connerImage(int idImage, ImageView mImage) {
+        mbitmap = ((BitmapDrawable) getResources().getDrawable(idImage)).getBitmap();
+        imageRounded = Bitmap.createBitmap(mbitmap.getWidth(), mbitmap.getHeight(), mbitmap.getConfig());
+        canvas = new Canvas(imageRounded);
+        mpaint = new Paint();
+        mpaint.setAntiAlias(true);
+        mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+        canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 30, 30, mpaint); // Round Image Corner 100 100 100 100
+        mImage.setImageBitmap(imageRounded);
     }
 }

@@ -283,24 +283,23 @@
 
         <ImageView
             android:id="@+id/select_language_img"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="46dp"
             android:layout_marginRight="10dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/flag_vn" />
+            android:scaleType="fitXY" />
 
         <ImageView
             android:id="@+id/rate_icon_img"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="46dp"
             android:layout_marginRight="10dp"
             android:scaleType="fitXY"
             android:src="@mipmap/rate_icon" />
 
         <ImageView
             android:id="@+id/feedback_icon_img"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="46dp"
             android:scaleType="fitXY"
             android:src="@mipmap/feedback_icon" />
 
