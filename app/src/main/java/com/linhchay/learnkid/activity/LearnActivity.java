@@ -308,10 +308,6 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         connerImage(R.mipmap.next_btn_1, backBtn);
     }
 
-    private void setPreviewImage() {
-
-    }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
