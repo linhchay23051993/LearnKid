@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activity.InterviewActivity">
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,6 +19,7 @@
         <activity android:name=".activity.LearnActivity" />
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.PracticeActivity" />
+        <activity android:name=".activity.InterviewActivity" />
     </application>
 
 </manifest>

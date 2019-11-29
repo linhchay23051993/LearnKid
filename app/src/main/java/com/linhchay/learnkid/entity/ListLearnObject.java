@@ -80,17 +80,18 @@ public class ListLearnObject {
 
     public static List<LearnObject> getNumbersList() {
         learnObjectList = new ArrayList<>();
-        learnObjectList.add(new LearnObject("number_khong", "Số Không", "Zero", "number_one", "number_eng_khong"));
-        learnObjectList.add(new LearnObject("number_mot", "Số Một", "One", "number_one", "number_eng_mot"));
-        learnObjectList.add(new LearnObject("number_hai", "Số Hai", "Two", "number_one", "number_eng_hai"));
-        learnObjectList.add(new LearnObject("number_ba", "Số Ba", "Three", "number_one", "number_eng_ba"));
-        learnObjectList.add(new LearnObject("number_bon", "Số Bốn", "Four", "number_one", "number_eng_bon"));
-        learnObjectList.add(new LearnObject("number_nam", "Số Năm", "Five", "number_one", "number_eng_nam"));
-        learnObjectList.add(new LearnObject("number_sau", "Số Sáu", "Six", "number_one", "number_eng_sau"));
-        learnObjectList.add(new LearnObject("number_bay", "Số Bảy", "Seven", "number_one", "number_eng_bay"));
-        learnObjectList.add(new LearnObject("number_tam", "Số Tám", "Eight", "number_one", "number_eng_tam"));
-        learnObjectList.add(new LearnObject("number_chin", "Số Chín", "Nine", "number_one", "number_eng_chin"));
-        learnObjectList.add(new LearnObject("number_muoi", "Số Mười", "Ten", "number_one", "number_eng_muoi"));
+        learnObjectList.add(new LearnObject("number_khong", "Số Không", "Zero", "number_vn_khong", "number_eng_khong"));
+        learnObjectList.add(new LearnObject("number_mot", "Số Một", "One", "number_vn_mot", "number_eng_mot"));
+        learnObjectList.add(new LearnObject("number_hai", "Số Hai", "Two", "number_vn_hai", "number_eng_hai"));
+        learnObjectList.add(new LearnObject("number_ba", "Số Ba", "Three", "number_vn_ba", "number_eng_ba"));
+        learnObjectList.add(new LearnObject("number_bon", "Số Bốn", "Four", "number_vn_bon", "number_eng_bon"));
+        learnObjectList.add(new LearnObject("number_nam", "Số Năm", "Five", "number_vn_nam", "number_eng_nam"));
+        learnObjectList.add(new LearnObject("number_sau", "Số Sáu", "Six", "number_vn_sau", "number_eng_sau"));
+        learnObjectList.add(new LearnObject("number_bay", "Số Bảy", "Seven", "number_vn_bay", "number_eng_bay"));
+        learnObjectList.add(new LearnObject("number_tam", "Số Tám", "Eight", "number_vn_tam", "number_eng_tam"));
+        learnObjectList.add(new LearnObject("number_chin", "Số Chín", "Nine", "number_vn_chin", "number_eng_chin"));
+        learnObjectList.add(new LearnObject("number_muoi", "Số Mười", "Ten", "number_vn_muoi", "number_eng_muoi"));
+
         return learnObjectList;
     }
 
@@ -131,32 +132,32 @@ public class ListLearnObject {
 
     public static List<LearnObject> getAlphabetListENG() {
         learnObjectList = new ArrayList<>();
-        learnObjectList.add(new LearnObject("alphabet_a_1", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_b", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_c", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_d_1", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_e_1", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_f", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_g", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_h", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_i", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_j", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_k", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_l", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_m", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_n", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_o_1", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_p", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_q", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_r", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_s", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_t", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_u_1", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_v", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_w", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_x", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_y", "1", "1", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("alphabet_z", "1", "1", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("alphabet_a_1", "", "", "alphabet_vn_a_1", "alphabet_eng_a_1"));
+        learnObjectList.add(new LearnObject("alphabet_b", "", "", "alphabet_vn_b", "alphabet_eng_b"));
+        learnObjectList.add(new LearnObject("alphabet_c", "", "", "alphabet_vn_c", "alphabet_eng_c"));
+        learnObjectList.add(new LearnObject("alphabet_d_1", "", "", "alphabet_vn_d_1", "alphabet_eng_d_1"));
+        learnObjectList.add(new LearnObject("alphabet_e_1", "", "", "alphabet_vn_e_1", "alphabet_eng_e_1"));
+        learnObjectList.add(new LearnObject("alphabet_g", "", "", "alphabet_vn_g", "alphabet_eng_g"));
+        learnObjectList.add(new LearnObject("alphabet_h", "", "", "alphabet_vn_h", "alphabet_eng_h"));
+        learnObjectList.add(new LearnObject("alphabet_i", "", "", "alphabet_vn_i", "alphabet_eng_i"));
+        learnObjectList.add(new LearnObject("alphabet_j", "", "", "alphabet_vn_j", "alphabet_eng_j"));
+        learnObjectList.add(new LearnObject("alphabet_k", "", "", "alphabet_vn_k", "alphabet_eng_k"));
+        learnObjectList.add(new LearnObject("alphabet_l", "", "", "alphabet_vn_l", "alphabet_eng_l"));
+        learnObjectList.add(new LearnObject("alphabet_m", "", "", "alphabet_vn_m", "alphabet_eng_m"));
+        learnObjectList.add(new LearnObject("alphabet_n", "", "", "alphabet_vn_n", "alphabet_eng_n"));
+        learnObjectList.add(new LearnObject("alphabet_o_1", "", "", "alphabet_vn_o_1", "alphabet_eng_o_1"));
+        learnObjectList.add(new LearnObject("alphabet_p", "", "", "alphabet_vn_p", "alphabet_eng_p"));
+        learnObjectList.add(new LearnObject("alphabet_q", "", "", "alphabet_vn_q", "alphabet_eng_q"));
+        learnObjectList.add(new LearnObject("alphabet_r", "", "", "alphabet_vn_r", "alphabet_eng_r"));
+        learnObjectList.add(new LearnObject("alphabet_s", "", "", "alphabet_vn_s", "alphabet_eng_s"));
+        learnObjectList.add(new LearnObject("alphabet_t", "", "", "alphabet_vn_t", "alphabet_eng_t"));
+        learnObjectList.add(new LearnObject("alphabet_u_1", "", "", "alphabet_vn_u_1", "alphabet_eng_u_1"));
+        learnObjectList.add(new LearnObject("alphabet_v", "", "", "alphabet_vn_v", "alphabet_eng_v"));
+        learnObjectList.add(new LearnObject("alphabet_x", "", "", "alphabet_vn_x", "alphabet_eng_x"));
+        learnObjectList.add(new LearnObject("alphabet_y", "", "", "alphabet_vn_y", "alphabet_eng_y"));
+        learnObjectList.add(new LearnObject("alphabet_w", "", "", "alphabet_vn_w", "alphabet_eng_w"));
+        learnObjectList.add(new LearnObject("alphabet_z", "", "", "alphabet_vn_z", "alphabet_eng_z"));
+
 
         return learnObjectList;
     }
@@ -199,18 +200,18 @@ public class ListLearnObject {
 
     public static List<LearnObject> getColorList() {
         learnObjectList = new ArrayList<>();
-        learnObjectList = new ArrayList<>();
-        learnObjectList.add(new LearnObject("color_do", "Màu Đỏ", "Red", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("color_den", "Màu Đen", "Black", "number_one", "number_one"));
-//        learnObjectList.add(new LearnObject("color_trang", "Màu Trắng", "White", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("color_vang", "Màu Vàng", "Yellow", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("color_tim", "Màu Tím", "Purple", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("color_hong", "Màu Hồng", "Pink", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("color_dacam", "Màu Da Cam", "Orange", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("color_nau", "Màu Nâu", "Brown", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("color_xam", "Màu Xám", "Grey", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("color_xanhlacay", "Màu Xanh Lá Cây", "Green", "number_one", "number_one"));
-        learnObjectList.add(new LearnObject("color_xanhduong", "Màu Xanh Dương", "Blue", "number_one", "number_one"));
+        learnObjectList.add(new LearnObject("color_do", "Màu Đỏ", "Red", "color_vn_do", "color_eng_do"));
+        learnObjectList.add(new LearnObject("color_den", "Màu Đen", "Black", "color_vn_den", "color_eng_den"));
+        learnObjectList.add(new LearnObject("color_trang", "Màu Trắng", "White", "color_vn_trang", "color_eng_trang"));
+        learnObjectList.add(new LearnObject("color_vang", "Màu Vàng", "Yellow", "color_vn_vang", "color_eng_vang"));
+        learnObjectList.add(new LearnObject("color_tim", "Màu Tím", "Purple", "color_vn_tim", "color_eng_tim"));
+        learnObjectList.add(new LearnObject("color_hong", "Màu Hồng", "Pink", "color_vn_hong", "color_eng_hong"));
+        learnObjectList.add(new LearnObject("color_dacam", "Màu Da Cam", "Orange", "color_vn_dacam", "color_eng_dacam"));
+        learnObjectList.add(new LearnObject("color_nau", "Màu Nâu", "Brown", "color_vn_nau", "color_eng_nau"));
+        learnObjectList.add(new LearnObject("color_xam", "Màu Xám", "Grey", "color_vn_xam", "color_eng_xam"));
+        learnObjectList.add(new LearnObject("color_xanhlacay", "Màu Xanh Lá Cây", "Green", "color_vn_xanhlacay", "color_eng_xanhlacay"));
+        learnObjectList.add(new LearnObject("color_xanhduong", "Màu Xanh Dương", "Blue", "color_vn_xanhduong", "color_eng_xanhduong"));
+
         return learnObjectList;
     }
 
