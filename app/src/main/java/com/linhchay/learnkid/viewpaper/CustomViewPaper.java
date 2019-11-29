@@ -95,7 +95,7 @@ public class CustomViewPaper extends PagerAdapter {
         mpaint = new Paint();
         mpaint.setAntiAlias(true);
         mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-        canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 70, 70, mpaint); // Round Image Corner 100 100 100 100
+        canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 50, 50, mpaint); // Round Image Corner 100 100 100 100
         mImage.setImageBitmap(imageRounded);
 
         final int language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, 0);

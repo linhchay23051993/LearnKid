@@ -602,6 +602,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
     public void onBackPressed() {
         Intent animalsIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(animalsIntent);
+        finish();
     }
 
     private void showDialogFinish() {
