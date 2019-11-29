@@ -42,7 +42,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
     TextView titleText, questionText;
     ImageView answerA, answerB, answerC, answerD;
     TextView checkAnswerA, checkAnswerB, checkAnswerC, checkAnswerD;
-    Button playMusicBtn, nextQuestionBtn;
+    ImageView playMusicBtn, nextQuestionBtn;
     ImageView backScreenBtn;
 
     SharedPreferences sharedPreferences;
@@ -188,6 +188,9 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, 0);
+
+        connerImage(R.mipmap.sound_btn, playMusicBtn);
+        connerImage(R.mipmap.previous_btn_1, nextQuestionBtn);
 
     }
 

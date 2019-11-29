@@ -47,12 +47,12 @@
             android:layout_marginTop="16dp"
             android:text="10/10"
             android:textColor="#fff100"
-            android:textSize="23sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="138dp"
             android:layout_marginTop="16dp">
 
             <RelativeLayout
@@ -98,7 +98,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="138dp"
             android:layout_marginTop="10dp">
 
             <RelativeLayout
@@ -148,16 +148,20 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <ImageView
                 android:id="@+id/play_music_btn"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="30dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/sound_btn" />
 
-            <Button
+            <ImageView
                 android:id="@+id/next_question_btn"
                 android:layout_width="70dp"
-                android:layout_height="70dp" />
+                android:layout_height="70dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/previous_btn_1" />
         </LinearLayout>
 
 

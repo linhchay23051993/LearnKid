@@ -3,6 +3,13 @@ package com.linhchay.learnkid.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -40,9 +47,14 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
 
     TextView titleText, countObjectText;
 
-    Button nextBtn, backBtn, playMusicBtn;
-
+    ImageView nextBtn, backBtn, playMusicBtn;
     ImageView backScreenBtn;
+
+    private Bitmap mbitmap;
+    private Bitmap imageRounded;
+    private Canvas canvas;
+    private Paint mpaint;
+
 
     int language;
     double sizeScreen;
@@ -290,6 +302,10 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, 0);
+
+        connerImage(R.mipmap.previous_btn_1, nextBtn);
+        connerImage(R.mipmap.sound_btn, playMusicBtn);
+        connerImage(R.mipmap.next_btn_1, backBtn);
     }
 
     private void setPreviewImage() {
@@ -326,6 +342,17 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void connerImage(int idImage, ImageView mImage) {
+        mbitmap = ((BitmapDrawable) getResources().getDrawable(idImage)).getBitmap();
+        imageRounded = Bitmap.createBitmap(mbitmap.getWidth(), mbitmap.getHeight(), mbitmap.getConfig());
+        canvas = new Canvas(imageRounded);
+        mpaint = new Paint();
+        mpaint.setAntiAlias(true);
+        mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
+        canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 86, 86, mpaint); // Round Image Corner 100 100 100 100
+        mImage.setImageBitmap(imageRounded);
     }
 
     private double getSizeScreen() {

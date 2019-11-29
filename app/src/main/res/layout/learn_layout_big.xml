@@ -169,25 +169,25 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <ImageView
                 android:id="@+id/back_btn"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginRight="30dp"
-                android:background="@mipmap/next_btn_1" />
+                android:scaleType="fitXY" />
 
-            <Button
+            <ImageView
                 android:id="@+id/play_music_btn"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginRight="30dp"
-                android:background="@mipmap/sound_btn" />
+                android:scaleType="fitXY" />
 
-            <Button
+            <ImageView
                 android:id="@+id/next_btn"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:background="@mipmap/previous_btn_1" />
+                android:scaleType="fitXY" />
         </LinearLayout>
 
     </LinearLayout>
