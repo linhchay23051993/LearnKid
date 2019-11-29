@@ -13,6 +13,7 @@ import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,12 +46,14 @@ public class CustomViewPaper extends PagerAdapter {
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    double sizeScreen;
 
 
-    public CustomViewPaper(Context mContext, List<LearnObject> mLearnObject, ViewPager mViewPager) {
+    public CustomViewPaper(Context mContext, List<LearnObject> mLearnObject, ViewPager mViewPager, double sizeScreen) {
         this.mContext = mContext;
         this.mLearnObject = mLearnObject;
         this.mViewPager = mViewPager;
+        this.sizeScreen = sizeScreen;
         mLayoutInflater = LayoutInflater.from(mContext);
         sharedPreferences = mContext.getSharedPreferences(SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -69,7 +72,12 @@ public class CustomViewPaper extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
-        View view = mLayoutInflater.inflate(R.layout.item_viewpaper_small, container, false);
+        View view = null;
+        if (sizeScreen > 5) {
+            view = mLayoutInflater.inflate(R.layout.item_viewpaper_big, container, false);
+        } else {
+            view = mLayoutInflater.inflate(R.layout.item_viewpaper_small, container, false);
+        }
         mImage = view.findViewById(R.id.object_img);
         mName = view.findViewById(R.id.object_text);
         previewImg_1 = view.findViewById(R.id.preview_1_img);

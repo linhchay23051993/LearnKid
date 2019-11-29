@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -44,11 +45,17 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
     ImageView backScreenBtn;
 
     int language;
+    double sizeScreen;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.learn_layout_small);
+        sizeScreen = getSizeScreen();
+        if (sizeScreen > 5) {
+            setContentView(R.layout.learn_layout_big);
+        } else {
+            setContentView(R.layout.learn_layout_small);
+        }
         initView();
         createLearnLayout();
     }
@@ -59,7 +66,7 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void setUpViewPaper() {
-        mCustomViewPaper = new CustomViewPaper(this, mLearnObjectList, mViewPager);
+        mCustomViewPaper = new CustomViewPaper(this, mLearnObjectList, mViewPager, sizeScreen);
         mViewPager.setPageTransformer(true, new ViewPaperTransformer());
         mViewPager.setAdapter(mCustomViewPaper);
         // set preview image
@@ -319,5 +326,13 @@ public class LearnActivity extends AppCompatActivity implements View.OnClickList
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private double getSizeScreen() {
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        double x = Math.pow(dm.widthPixels / dm.xdpi, 2);
+        double y = Math.pow(dm.heightPixels / dm.ydpi, 2);
+        return Math.sqrt(x + y);
     }
 }

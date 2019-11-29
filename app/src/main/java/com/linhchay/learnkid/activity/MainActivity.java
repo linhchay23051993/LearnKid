@@ -1,6 +1,5 @@
 package com.linhchay.learnkid.activity;
 
-import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -19,10 +18,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialog;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -46,17 +43,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Paint mpaint;
 
     int language = 0;
+    double sizeScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        DisplayMetrics dm = new DisplayMetrics();
-//        getWindowManager().getDefaultDisplay().getMetrics(dm);
-//        double x = Math.pow(dm.widthPixels / dm.xdpi, 2);
-//        double y = Math.pow(dm.heightPixels / dm.ydpi, 2);
-//        double screenInches = Math.sqrt(x + y);
-//        Log.d("LinhChay", "Screen inches : " + screenInches);
-        setContentView(R.layout.activity_main_small);
+        sizeScreen = getSizeScreen();
+        if (sizeScreen > 5) {
+            setContentView(R.layout.activity_main_big);
+        } else {
+            setContentView(R.layout.activity_main_small);
+        }
         initView();
         getSelectedLangauge();
     }
@@ -225,7 +222,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void showConfirmStudyDialog(final int type) {
         language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, -1);
         final AppCompatDialog mDialog = new AppCompatDialog(this);
-        mDialog.setContentView(R.layout.dialog_study_practice);
+        if (sizeScreen > 5) {
+            mDialog.setContentView(R.layout.dialog_study_practice_big);
+        } else {
+            mDialog.setContentView(R.layout.dialog_study_practice_small);
+        }
         Window window = mDialog.getWindow();
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
@@ -349,5 +350,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
         canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 30, 30, mpaint); // Round Image Corner 100 100 100 100
         mImage.setImageBitmap(imageRounded);
+    }
+
+    private double getSizeScreen() {
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        double x = Math.pow(dm.widthPixels / dm.xdpi, 2);
+        double y = Math.pow(dm.heightPixels / dm.ydpi, 2);
+        return Math.sqrt(x + y);
     }
 }

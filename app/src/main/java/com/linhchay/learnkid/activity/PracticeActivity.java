@@ -19,6 +19,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDialog;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -65,7 +66,12 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.practice_layout_small);
+        double sizeScreen = getSizeScreen();
+        if (sizeScreen > 5) {
+            setContentView(R.layout.practice_layout_big);
+        } else {
+            setContentView(R.layout.practice_layout_small);
+        }
         initView();
         createQuestion();
     }
@@ -630,5 +636,13 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
             }, 300);
 
         }
+    }
+
+    private double getSizeScreen() {
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        double x = Math.pow(dm.widthPixels / dm.xdpi, 2);
+        double y = Math.pow(dm.heightPixels / dm.ydpi, 2);
+        return Math.sqrt(x + y);
     }
 }
