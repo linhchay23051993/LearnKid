@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView titleText;
     ImageView selectLanguageTmg, rateIconImg, feedbakIconImg;
 
+    ImageView animalsImg, objectImg, numberImg, alphabetImg, fruitImg, colorImg;
+
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         shapeText.setText(R.string.vn_shapes);
 
         titleText.setText("Bài học");
-        connerImage(R.mipmap.flag_vn, selectLanguageTmg);
+        connerImage(R.mipmap.flag_vn, selectLanguageTmg, 25, 25);
     }
 
     private void createHomeScreenENG() {
@@ -97,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         shapeText.setText(R.string.eng_shapes);
 
         titleText.setText("Lesson");
-        connerImage(R.mipmap.flag_eng, selectLanguageTmg);
+        connerImage(R.mipmap.flag_eng, selectLanguageTmg, 25, 25);
     }
 
     private void initView() {
@@ -109,6 +111,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         foodBg = findViewById(R.id.food_bg);
         colorBg = findViewById(R.id.color_bg);
         shapeBg = findViewById(R.id.shape_bg);
+
+        animalsImg = findViewById(R.id.main_animals_img);
+        objectImg = findViewById(R.id.main_object_img);
+        numberImg = findViewById(R.id.main_number_img);
+        alphabetImg = findViewById(R.id.main_alphabet_img);
+        fruitImg = findViewById(R.id.main_fruit_img);
+        colorImg = findViewById(R.id.main_color_img);
 
         animalsText = findViewById(R.id.animals_text);
         objectText = findViewById(R.id.object_text);
@@ -139,8 +148,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        connerImage(R.mipmap.rate_icon, rateIconImg);
-        connerImage(R.mipmap.feedback_icon, feedbakIconImg);
+        connerImage(R.mipmap.rate_icon, rateIconImg, 25, 25);
+        connerImage(R.mipmap.feedback_icon, feedbakIconImg, 25, 25);
+        connerImage(R.drawable.main_animals, animalsImg, 65, 65);
+        connerImage(R.drawable.main_object, objectImg, 65, 65);
+        connerImage(R.drawable.main_number, numberImg, 65, 65);
+        connerImage(R.drawable.main_alphabet, alphabetImg, 65, 65);
+        connerImage(R.drawable.main_fruit, fruitImg, 65, 65);
+        connerImage(R.drawable.main_color, colorImg, 65, 65);
     }
 
     @Override
@@ -341,14 +356,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mDialog.show();
     }
 
-    private void connerImage(int idImage, ImageView mImage) {
+    private void connerImage(int idImage, ImageView mImage, int connerX, int connerY) {
         mbitmap = ((BitmapDrawable) getResources().getDrawable(idImage)).getBitmap();
         imageRounded = Bitmap.createBitmap(mbitmap.getWidth(), mbitmap.getHeight(), mbitmap.getConfig());
         canvas = new Canvas(imageRounded);
         mpaint = new Paint();
         mpaint.setAntiAlias(true);
         mpaint.setShader(new BitmapShader(mbitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-        canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), 30, 30, mpaint); // Round Image Corner 100 100 100 100
+        canvas.drawRoundRect((new RectF(0, 0, mbitmap.getWidth(), mbitmap.getHeight())), connerX, connerY, mpaint); // Round Image Corner 100 100 100 100
         mImage.setImageBitmap(imageRounded);
     }
 
