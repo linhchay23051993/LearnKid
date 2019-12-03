@@ -611,6 +611,7 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         Window window = mDialog.getWindow();
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mDialog.setCanceledOnTouchOutside(false);
+        mDialog.setCancelable(false);
         TextView titleOneText = mDialog.findViewById(R.id.title_one_text);
         TextView titleTwoText = mDialog.findViewById(R.id.title_two_text);
         TextView finishBtn = mDialog.findViewById(R.id.finish_btn);
