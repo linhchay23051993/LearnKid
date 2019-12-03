@@ -348,16 +348,16 @@
 
         <ImageView
             android:id="@+id/rate_icon_img"
-            android:layout_width="55dp"
-            android:layout_height="42dp"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
             android:layout_marginRight="10dp"
             android:scaleType="fitXY"
             android:src="@mipmap/rate_icon" />
 
         <ImageView
             android:id="@+id/feedback_icon_img"
-            android:layout_width="55dp"
-            android:layout_height="42dp"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
             android:scaleType="fitXY"
             android:src="@mipmap/feedback_icon" />
 

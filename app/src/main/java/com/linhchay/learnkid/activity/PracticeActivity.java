@@ -189,8 +189,8 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         editor = sharedPreferences.edit();
         language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, 0);
 
-        connerImage(R.mipmap.sound_btn, playMusicBtn);
-        connerImage(R.mipmap.previous_btn_1, nextQuestionBtn);
+        connerImage(R.mipmap.sound_btn_practice, playMusicBtn);
+        connerImage(R.mipmap.previous_btn_practice, nextQuestionBtn);
 
     }
 
