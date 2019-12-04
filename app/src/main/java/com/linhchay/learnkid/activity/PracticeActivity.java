@@ -627,6 +627,13 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
                 finish();
             }
         });
+        mMediaPlayer = MediaPlayer.create(this, R.raw.win);
+        mMediaPlayer.start();
+        mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                mp.release();
+            }
+        });
         mDialog.show();
     }
 

@@ -38,7 +38,7 @@ public class ListLearnObject {
         learnObjectList.add(new LearnObject("animals_concua", "Con Cua", "Crab", "animals_vn_concua", "animals_eng_concua"));
         learnObjectList.add(new LearnObject("animals_contho", "Con Thỏ", "Rabbit", "animals_vn_contho", "animals_eng_contho"));
         learnObjectList.add(new LearnObject("animals_concasau", "Con Cá Sấu", "Crocodile", "animals_vn_concasau", "animals_eng_concasau"));
-        learnObjectList.add(new LearnObject("animals_congautruc", "Con Gấu  Trúc", "Panda", "animals_vn_congautruc", "animals_eng_congautruc"));
+        learnObjectList.add(new LearnObject("animals_congautruc", "Con Gấu Trúc", "Panda", "animals_vn_congautruc", "animals_eng_congautruc"));
         learnObjectList.add(new LearnObject("animals_conlacda", "Con Lạc Đà", "Camel", "animals_vn_conlacda", "animals_eng_conlacda"));
         learnObjectList.add(new LearnObject("animals_contegiac", "Con Tê Giác", "Rhino", "animals_vn_contegiac", "animals_eng_contegiac"));
         learnObjectList.add(new LearnObject("animals_conhama", "Con Hà Mã", "Hippopotamus", "animals_vn_conhama", "animals_eng_conhama"));
