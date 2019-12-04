@@ -184,11 +184,12 @@ public class PracticeActivity extends AppCompatActivity implements View.OnClickL
         nextQuestionBtn.setEnabled(false);
 
         learnObjectsList = new ArrayList<>();
-        checkTypeLearn();
+
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, 0);
 
+        language = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_LANGUAGE_KEY, 0);
+        checkTypeLearn();
         connerImage(R.mipmap.sound_btn_practice, playMusicBtn);
         connerImage(R.mipmap.previous_btn_practice, nextQuestionBtn);
 

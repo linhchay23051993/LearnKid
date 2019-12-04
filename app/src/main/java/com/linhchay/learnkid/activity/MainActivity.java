@@ -31,6 +31,7 @@ import com.linhchay.learnkid.listener.SingleTapListenerImpl;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     LinearLayout animalsBg, objectBg, numberBg, alphabetBg, fruitBg, foodBg, colorBg, shapeBg;
+    LinearLayout selectLanguageTmgBg;
     TextView animalsText, objectText, numberText, alphabetText, fruitText, foodText, colorText, shapeText;
     TextView titleText;
     ImageView selectLanguageTmg, rateIconImg, feedbakIconImg;
@@ -132,6 +133,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         titleText = findViewById(R.id.title_text);
 
         selectLanguageTmg = findViewById(R.id.select_language_img);
+        selectLanguageTmgBg = findViewById(R.id.select_language_img_bg);
         rateIconImg = findViewById(R.id.rate_icon_img);
         feedbakIconImg = findViewById(R.id.feedback_icon_img);
 
@@ -143,9 +145,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         foodBg.setOnClickListener(new SingleTapListenerImpl(this));
         colorBg.setOnClickListener(new SingleTapListenerImpl(this));
         shapeBg.setOnClickListener(new SingleTapListenerImpl(this));
-        selectLanguageTmg.setOnClickListener(new SingleTapListenerImpl(this));
+//        selectLanguageTmg.setOnClickListener(new SingleTapListenerImpl(this));
         rateIconImg.setOnClickListener(new SingleTapListenerImpl(this));
         feedbakIconImg.setOnClickListener(new SingleTapListenerImpl(this));
+        selectLanguageTmgBg.setOnClickListener(new SingleTapListenerImpl(this));
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
@@ -162,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.select_language_img:
+            case R.id.select_language_img_bg:
                 changeLanguageOnClick();
                 break;
             case R.id.rate_icon_img:

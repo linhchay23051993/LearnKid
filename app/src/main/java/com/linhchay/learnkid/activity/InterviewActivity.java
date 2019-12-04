@@ -35,8 +35,7 @@ public class InterviewActivity extends AppCompatActivity implements View.OnClick
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-//        int interview = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_SETTING_INTERVIEW_KEY, -1);
-        int interview = -1;
+        int interview = sharedPreferences.getInt(Constant.SHARED_PREFERENCES_SETTING_INTERVIEW_KEY, -1);
         if (interview == -1) {
             setContentView(R.layout.interview_layout_small);
             initView();
