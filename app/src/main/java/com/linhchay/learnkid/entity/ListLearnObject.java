@@ -137,6 +137,7 @@ public class ListLearnObject {
         learnObjectList.add(new LearnObject("alphabet_c", "", "Cc", "alphabet_vn_c", "alphabet_eng_c"));
         learnObjectList.add(new LearnObject("alphabet_d_1", "", "Dd", "alphabet_vn_d_1", "alphabet_eng_d_1"));
         learnObjectList.add(new LearnObject("alphabet_e_1", "", "Ee", "alphabet_vn_e_1", "alphabet_eng_e_1"));
+        learnObjectList.add(new LearnObject("alphabet_f", "", "Ff", "alphabet_vn_f", "alphabet_eng_f"));
         learnObjectList.add(new LearnObject("alphabet_g", "", "Gg", "alphabet_vn_g", "alphabet_eng_g"));
         learnObjectList.add(new LearnObject("alphabet_h", "", "Hh", "alphabet_vn_h", "alphabet_eng_h"));
         learnObjectList.add(new LearnObject("alphabet_i", "", "Ii", "alphabet_vn_i", "alphabet_eng_i"));
