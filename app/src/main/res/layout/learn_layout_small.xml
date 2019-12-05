@@ -18,6 +18,7 @@
             android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="6dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="fitXY"
             android:src="@mipmap/back_btn" />
 
@@ -176,6 +177,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="26dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitXY" />
 
             <ImageView
@@ -183,12 +185,14 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="26dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitXY" />
 
             <ImageView
                 android:id="@+id/next_btn"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitXY" />
         </LinearLayout>
 

@@ -16,9 +16,10 @@
             android:id="@+id/back_screen_btn"
             android:layout_width="60dp"
             android:layout_height="35dp"
-            android:scaleType="fitXY"
-            android:layout_marginLeft="8dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitXY"
             android:src="@mipmap/back_btn_practice" />
 
         <TextView
@@ -153,6 +154,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginRight="30dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitXY"
                 android:src="@mipmap/sound_btn" />
 
@@ -160,6 +162,7 @@
                 android:id="@+id/next_question_btn"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitXY"
                 android:src="@mipmap/previous_btn_1" />
         </LinearLayout>

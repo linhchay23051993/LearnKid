@@ -350,6 +350,7 @@
                 android:layout_width="50dp"
                 android:layout_height="35dp"
                 android:layout_marginRight="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitXY" />
         </LinearLayout>
 
@@ -358,6 +359,7 @@
             android:layout_width="65dp"
             android:layout_height="50dp"
             android:layout_marginRight="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="fitXY"
             android:src="@mipmap/rate_icon" />
 
@@ -365,6 +367,7 @@
             android:id="@+id/feedback_icon_img"
             android:layout_width="60dp"
             android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="fitXY"
             android:src="@mipmap/feedback_icon" />
 
